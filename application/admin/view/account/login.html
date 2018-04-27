@@ -11,6 +11,7 @@
 		.login-main-bk{background: #ffffff; padding: 20px; border-radius: 4px; box-shadow: 5px 5px 20px #444444;}
 		.login-main-bk-head{color: gray;}
 		.login-main-form{width: 100%;margin-left: -30px;}
+		.login-main-form-captcha{cursor:pointer;}
 	</style>
 </head>
 <body class="login-body">
@@ -26,25 +27,25 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label" >用户名</label>
 						<div class="layui-input-block">
-							<input type="text" name="username" required lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+							<input type="text" id="username" required lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
 						</div>
 					</div>
 					<div class="layui-form-item">
 						<label class="layui-form-label">密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
 						<div class="layui-input-block">
-							<input type="password" name="passwd" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+							<input type="password" id="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
 						</div>
 					</div>
 					<div class="layui-form-item">
 						<label class="layui-form-label">验证码</label>
 						<div class="layui-input-inline">
-							<input type="text" name="code" required lay-verify="required" placeholder="请输入验证码" autocomplete="off" class="layui-input">
+							<input type="text" id="verifyCode" required lay-verify="required" placeholder="请输入验证码" autocomplete="off" class="layui-input">
 						</div>
-						<img src="">
+						<img id="captcha" class="login-main-form-captcha" src="{:captcha_src()}" onclick="flashCode()">
 					</div>
 					<div class="layui-form-item">
 						<div class="layui-input-block">
-							<button class="layui-btn">登录</button>
+							<button class="layui-btn" onclick="doLogin()">登录</button>
 						</div>
 					</div>
 				</div>
@@ -52,5 +53,59 @@
 			<!--登录表单 end-->
 		</div>
 	</div>
+	<script type="text/javascript">
+		//使用layui内置的jquery
+		layui.use(['layer'], function(){
+		    $ = layui.jquery;
+		    layer = layui.layer;
+		});
+
+		//验证码点击刷新
+		function flashCode()
+		{
+            var captcha = document.getElementById('captcha');
+            captcha.src = "{:captcha_src()}?" + Math.random();
+		}
+
+		//登录
+		function doLogin()
+		{
+			var username = $.trim($('#username').val());
+			var password = $.trim($('#password').val());
+			var verifyCode = $.trim($('#verifyCode').val());
+
+			if (username == '')
+			{
+			    layer.alert('请输入用户名',{icon:2});
+			    return;
+			}
+            if (password == '')
+            {
+                layer.alert('请输入密码',{icon:2});
+                return;
+            }
+            if (verifyCode == '')
+            {
+                layer.alert('请输入验证码',{icon:2});
+                return;
+            }
+
+            //将数据提交至后台
+			$.post('/admin/account/doLogin', {'username':username, 'password':password, 'verifyCode':verifyCode}, function(res){
+				if (res.code == 1)
+				{
+				    layer.alert(res.message,{icon:2});
+				} else if (res.code == 2){
+                    layer.alert(res.message,{icon:2});
+                    //此状况为在验证码校验通过后但数据库为查到数据，因验证码验证成功后会重置，所以需要刷新页面验证码
+                    var captcha = document.getElementById('captcha');
+                    captcha.src = "{:captcha_src()}?" + Math.random();
+				} else {
+				    layer.msg(res.message);
+				    setTimeout(function(){window.location.href='/admin/home/index';},1000);
+				}
+			}, 'json');
+		}
+	</script>
 </body>
 </html>

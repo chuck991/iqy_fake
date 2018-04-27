@@ -236,4 +236,21 @@ return [
         'var_page'  => 'page',
         'list_rows' => 15,
     ],
+
+    //验证码配置
+    'captcha'   =>  [
+        //验证码的字符集
+        'codeSet'   =>  '23456789abcdefghijklmnpqrstuvwxyzSBCDEFGHIJKLMNPQRSTUVWXYZ',
+        //设置验证码字体大小
+        'fontSize'  =>  18,
+        //添加混淆曲线
+        'uesCurve'  =>  false,
+        //设置图片的高宽
+        'imageW'    =>  150,
+        'imageH'    =>  38,
+        //验证码位数
+        'length'    =>  4,
+        //验证成功重置
+        'reset' =>  true,
+    ],
 ];
