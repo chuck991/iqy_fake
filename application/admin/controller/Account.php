@@ -2,6 +2,7 @@
 
 namespace app\admin\controller;
 
+use Utils\data\Sysdb;
 use think\Controller;
 
 class Account extends Controller

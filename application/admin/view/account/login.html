@@ -2,9 +2,55 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>登录</title>
+	<link rel="stylesheet" type="text/css" href="__STATIC__/plugins/layui/css/layui.css">
+	<script type="text/javascript" src="__STATIC__/plugins/layui/layui.js"></script>
+	<style type="text/css">
+		.login-body{background: #1E9FFF}
+		.login-main{position: absolute; top: 50%; left: 50%; width: 500px; margin-left: -250px; margin-top: -200px;}
+		.login-main-bk{background: #ffffff; padding: 20px; border-radius: 4px; box-shadow: 5px 5px 20px #444444;}
+		.login-main-bk-head{color: gray;}
+		.login-main-form{width: 100%;margin-left: -30px;}
+	</style>
 </head>
-<body>
-	<h1>欢迎光临</h1>
+<body class="login-body">
+	<div class="login-main">
+		<div class="login-main-bk">
+			<!--登录表单start-->
+			<div class="layui-form">
+				<div class="layui-form-item login-main-bk-head">
+					<h2>后台管理系统</h2>
+				</div>
+				<hr>
+				<div class="login-main-form">
+					<div class="layui-form-item">
+						<label class="layui-form-label" >用户名</label>
+						<div class="layui-input-block">
+							<input type="text" name="username" required lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+						<div class="layui-input-block">
+							<input type="password" name="passwd" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">验证码</label>
+						<div class="layui-input-inline">
+							<input type="text" name="code" required lay-verify="required" placeholder="请输入验证码" autocomplete="off" class="layui-input">
+						</div>
+						<img src="">
+					</div>
+					<div class="layui-form-item">
+						<div class="layui-input-block">
+							<button class="layui-btn">登录</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--登录表单 end-->
+		</div>
+	</div>
 </body>
 </html>
