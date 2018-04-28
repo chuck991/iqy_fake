@@ -49,6 +49,8 @@ class Account extends Controller
             exit(json_encode(array('code'=>1, 'message'=>'该用户已被禁用')));
         }
         //验证成功
+        //TODO 管理员信息更新
+
         session('admin',$admin);
         exit(json_encode(array('code'=>0, 'message'=>'登录成功')));
     }

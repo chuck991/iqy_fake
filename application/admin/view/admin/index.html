@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/plugins/layui/css/layui.css">
+    <script type="text/javascript" src="__STATIC__/plugins/layui/layui.js"></script>
+    <style type="text/css">
+        .admin-main-body{padding: 10px;}
+        .admin-main-header span{background: #009688;margin-left:30px; color: #ffffff;padding: 10px;}
+        .admin-main-header div{border-bottom: solid 2px #009688;margin-top: 8px;}
+        .admin-main-header button{float: right;margin-top: -5px;}
+        .admin-danger{color: red;}
+    </style>
+</head>
+<body class="admin-main-body">
+	<div class="admin-main-header">
+        <span>管理员列表</span>
+        <button class="layui-btn layui-btn-sm" onclick="add()">添加</button>
+        <div></div>
+    </div>
+    <table class="layui-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>用户名</th>
+                <th>真实姓名</th>
+                <th>角色</th>
+                <th>状态</th>
+                <th>创建时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {volist name="data" id="vo"}
+                <tr>
+                    <td>{$vo.id}</td>
+                    <td>{$vo.username}</td>
+                    <td>{$vo.truename}</td>
+                    <td>{$vo.gid}</td>
+                    <td>{$vo.status == 0 ? '正常' : '<span class="admin-danger">禁止</span>'}</td>
+                    <td>{:date('Y-m-d H:i:s', $vo.create_at)}</td>
+                    <td >
+                        <button class="layui-btn layui-btn-xs">编辑</button>
+                        <button class="layui-btn layui-btn-xs layui-btn-danger">删除</button>
+                    </td>
+                </tr>
+            {/volist}
+        </tbody>
+    </table>
+    <script type="text/javascript">
+        layui.use(['layer'], function(){
+            layer = layui.layer;
+            $ = layui.jquery;
+        });
+        function add()
+        {
+            layer.open({
+                type: 2,
+                title: '添加管理员',
+                shade: 0.3,
+                area: ['400px', '450px'],
+                content: '/admin/admin/add'
+            });
+        }
+    </script>
+</body>
+</html>
