@@ -10,19 +10,17 @@ use Utils\data\Sysdb;
  */
 class Home extends BaseAdmin
 {
-    public $admin;
 
     //后台首页
     public function index()
     {
-        $this->admin = session('admin');
-        $this->assign('admin',$this->admin);
+        $this->assign('admin',session('admin'));
         return $this->fetch();
     }
     //后台主页欢迎界面
     public function welcome()
     {
-        $this->assign('admin',$this->admin);
+        $this->assign('admin',session('admin'));
         return $this->fetch();
     }
 }

@@ -37,7 +37,7 @@ class Account extends Controller
             exit(json_encode(array('code'=>1, 'message'=>'验证码有误')));
         }
         $sysdb = new Sysdb();
-//        $password = md5($username . $password);
+        $password = md5($username . $password);
         $admin = $sysdb->table('admins')->where(array('username'=>$username,'password'=>$password))->item();
         if (!$admin)
         {
@@ -50,7 +50,9 @@ class Account extends Controller
         }
         //验证成功
         //TODO 管理员信息更新
-
+        $admin['last_login_at'] = $data['last_login_at'] = time();
+        $admin['last_login_ip'] = $data['last_login_ip'] = $_SERVER['REMOTE_ADDR'];
+        $sysdb->table('admins')->where(array('id'=>$admin['id']))->update($data);
         session('admin',$admin);
         exit(json_encode(array('code'=>0, 'message'=>'登录成功')));
     }

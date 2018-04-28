@@ -13,10 +13,11 @@
 <body class="admin-add-body">
     <div class="admin-add-form">
         <form class="layui-form">
+            <input type="hidden" name="id" value="{$data.admin.id}">
             <div class="layui-form-item">
                 <label class="layui-form-label">用户名</label>
                 <div class="layui-input-inline">
-                    <input type="text" class="layui-input" name="username">
+                    <input type="text" class="layui-input" name="username" value="{$data.admin.username}" {$data.admin == '' ? '' : 'readonly'}>
                 </div>
             </div>
             <div class="layui-form-item">
@@ -24,8 +25,8 @@
                 <div class="layui-input-inline">
                     <select name="gid">
                         <option value=0></option>
-                        {volist name='data' id='vo'}
-                        <option value="{$vo.id}">{$vo.group_name}</option>
+                        {volist name='data.groups' id='vo'}
+                        <option value="{$vo.id}" {$vo.id==$data.admin.gid?'selected' : ''}>{$vo.group_name}</option>
                         {/volist}
                     </select>
                 </div>
@@ -39,13 +40,14 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">姓&nbsp;&nbsp;&nbsp;&nbsp;名</label>
                 <div class="layui-input-block">
-                    <input type="text" class="layui-input" name="truename">
+                    <input type="text" class="layui-input" name="truename" value="{$data.admin.truename}">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">状&nbsp;&nbsp;&nbsp;&nbsp;态</label>
                 <div class="layui-input-inline">
-                    <input type="checkbox" lay-skin="primary" name="status" title="禁用" value="1">
+                    <input type="checkbox" lay-skin="primary" name="status" title="禁用" value="1"
+                           {$data.admin.status == 1? 'checked' : '';}>
                 </div>
             </div>
         </form>
@@ -64,6 +66,7 @@
         //添加数据
         function save()
         {
+            var id = parseInt($('input[name=id]').val());
             var username = $.trim($('input[name=username]').val());
             var password = $.trim($('input[name=password]').val());
             var truename = $.trim($('input[name=truename]').val());
@@ -80,7 +83,7 @@
                 layer.alert('未选择角色',{icon:2});
                 return;
             }
-            if (password == '')
+            if (isNaN(id) && password == '')
             {
                 layer.alert('密码不能为空',{icon:2});
                 return;

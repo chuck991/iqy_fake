@@ -32,17 +32,17 @@
             </tr>
         </thead>
         <tbody>
-            {volist name="data" id="vo"}
+            {volist name="data.admins" id="vo"}
                 <tr>
                     <td>{$vo.id}</td>
                     <td>{$vo.username}</td>
                     <td>{$vo.truename}</td>
-                    <td>{$vo.gid}</td>
+                    <td>{:isset($data['groups'][$vo.gid])? $data['groups'][$vo.gid]['group_name'] : ''}</td>
                     <td>{$vo.status == 0 ? '正常' : '<span class="admin-danger">禁止</span>'}</td>
                     <td>{:date('Y-m-d H:i:s', $vo.create_at)}</td>
                     <td >
-                        <button class="layui-btn layui-btn-xs">编辑</button>
-                        <button class="layui-btn layui-btn-xs layui-btn-danger">删除</button>
+                        <button class="layui-btn layui-btn-xs" onclick="add({$vo['id']})">编辑</button>
+                        <button class="layui-btn layui-btn-xs layui-btn-danger" onclick="del({$vo['id']})">删除</button>
                     </td>
                 </tr>
             {/volist}
@@ -53,14 +53,32 @@
             layer = layui.layer;
             $ = layui.jquery;
         });
-        function add()
+        //添加和编辑操作
+        function add(id)
         {
             layer.open({
                 type: 2,
-                title: '添加管理员',
+                title: id > 0 ? '编辑管理员信息' : '添加管理员',
                 shade: 0.3,
                 area: ['400px', '450px'],
-                content: '/admin/admin/add'
+                content: '/admin/admin/add?id=' +id,
+            });
+        }
+        //删除操作
+        function del(id)
+        {
+            layer.confirm('您确定要删除吗？', {
+                btn: ['确定','取消']
+            }, function(){
+                $.post('/admin/admin/del', {'id':id}, function(res){
+                    if (res.code > 0)
+                    {
+                        layer.alert(res.message,{icon:2});
+                        return;
+                    }
+                    layer.msg(res.message);
+                    setTimeout(function(){parent.window.location.reload();}, 1000);
+                }, 'json')
             });
         }
     </script>
