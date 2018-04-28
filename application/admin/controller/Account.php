@@ -49,7 +49,6 @@ class Account extends Controller
             exit(json_encode(array('code'=>1, 'message'=>'该用户已被禁用')));
         }
         //验证成功
-        //TODO 管理员信息更新
         $admin['last_login_at'] = $data['last_login_at'] = time();
         $admin['last_login_ip'] = $data['last_login_ip'] = $_SERVER['REMOTE_ADDR'];
         $sysdb->table('admins')->where(array('id'=>$admin['id']))->update($data);

@@ -29,24 +29,20 @@
 	<!--menuBar start-->
 	<div class="admin-menu">
 		<div class="layui-collapse" lay-accordion>
+			{volist name='menus' id='vo'}
 			<div class="layui-colla-item">
-				<h2 class="layui-colla-title">管理员管理</h2>
-				<div class="layui-colla-content layui-show">
+				<h2 class="layui-colla-title">{$vo.title}</h2>
+				<div class="layui-colla-content">
 					<ul class="layui-nav layui-nav-tree" lay-filter="test">
+						{volist name='vo.childs' id='vo2'}
 						<li class="layui-nav-item">
-							<a href="javascript:;" src="/admin/admin/index" onclick="menuFire(this)">管理员列表</a>
+							<a href="javascript:;" src="/admin/{$vo2.controller}/{$vo2.action}" onclick="menuFire(this)">{$vo2.title}</a>
 						</li>
+						{/volist}
 					</ul>
 				</div>
 			</div>
-			<div class="layui-colla-item">
-				<h2 class="layui-colla-title">权限管理</h2>
-				<div class="layui-colla-content">内容区域</div>
-			</div>
-			<div class="layui-colla-item">
-				<h2 class="layui-colla-title">系统设置</h2>
-				<div class="layui-colla-content">内容区域</div>
-			</div>
+			{/volist}
 		</div>
 	</div>
 	<!--menuBar end-->

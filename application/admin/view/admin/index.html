@@ -38,7 +38,7 @@
                     <td>{$vo.username}</td>
                     <td>{$vo.truename}</td>
                     <td>{:isset($data['groups'][$vo.gid])? $data['groups'][$vo.gid]['group_name'] : ''}</td>
-                    <td>{$vo.status == 0 ? '正常' : '<span class="admin-danger">禁止</span>'}</td>
+                    <td>{$vo.status == 0 ? '正常' : '<span class="admin-danger">禁用</span>'}</td>
                     <td>{:date('Y-m-d H:i:s', $vo.create_at)}</td>
                     <td >
                         <button class="layui-btn layui-btn-xs" onclick="add({$vo['id']})">编辑</button>
