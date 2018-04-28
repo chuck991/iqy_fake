@@ -10,6 +10,7 @@ use Utils\data\Sysdb;
  */
 class Home extends BaseAdmin
 {
+
     //后台首页
     public function index()
     {
@@ -19,6 +20,7 @@ class Home extends BaseAdmin
     //后台主页欢迎界面
     public function welcome()
     {
+        $this->assign('admin',session('admin'));
         return $this->fetch();
     }
 }

@@ -7,6 +7,7 @@ use think\Controller;
 
 class BaseAdmin extends Controller
 {
+    public $db;
     public function __construct()
     {
         parent::__construct();
@@ -17,5 +18,6 @@ class BaseAdmin extends Controller
             header('Location: /admin/account/login');
             exit;
         }
+        $this->db = new Sysdb();
     }
 }
