@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/plugins/layui/css/layui.css">
+    <script type="text/javascript" src="__STATIC__/plugins/layui/layui.js"></script>
+    <style type="text/css">
+        .admin-main-body{padding: 10px;}
+        .admin-main-header span{background: #009688;margin-left:30px; color: #ffffff;padding: 10px;}
+        .admin-main-header div{border-bottom: solid 2px #009688;margin-top: 8px;}
+        .admin-main-header button{float: right;margin-top: -5px;}
+        .admin-main-header button{float: right;margin-top: -5px;}
+    </style>
+</head>
+<body class="admin-main-body">
+    <div class="admin-main-header">
+        <span>角色列表</span>
+        <button class="layui-btn layui-btn-sm" onclick="add()">添加</button>
+        <div ></div>
+    </div>
+    <table class="layui-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>角色名称</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {volist name="data.roles" id='vo'}
+            <tr>
+                <td>{$vo.id}</td>
+                <td>{$vo.group_name}</td>
+                <td>
+                    <button class="layui-btn layui-btn-xs layui-btn-warm" onclick="add({$vo['id']})">编辑</button>
+                    <button class="layui-btn layui-btn-xs layui-btn-danger" onclick="del({$vo['id']})">删除</button>
+                </td>
+            </tr>
+            {/volist}
+        </tbody>
+    </table>
+	<script type="text/javascript">
+        layui.use(['layer', 'form'], function(){
+            var form = layui.form;
+            layer = layui.layer;
+            $ = layui.jquery;
+        });
+        //添加视图
+        function add(id)
+        {
+            layer.open({
+                type: 2,
+                title: id > 0 ? '更新角色' : '添加角色',
+                shade: 0.3,
+                area: ['400px', '450px'],
+                content: '/admin/roles/add?id=' +id,
+            });
+        }
+        //删除
+        function del(id)
+        {
+            layer.confirm('您确定要删除吗？', {
+                btn: ['确定','取消']
+            }, function(){
+                $.post('/admin/roles/del', {'id':id}, function(res){
+                    if (res.code > 0)
+                    {
+                        layer.alert(res.message,{icon:2});
+                        return;
+                    }
+                    layer.msg(res.message);
+                    setTimeout(function(){window.location.reload();}, 1000);
+                }, 'json');
+            });
+        }
+    </script>
+</body>
+</html>

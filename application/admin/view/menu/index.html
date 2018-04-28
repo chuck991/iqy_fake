@@ -16,8 +16,8 @@
 </head>
 <body class="admin-main-body">
     <div class="admin-main-header">
-        <span>菜单管理</span>
-        <div></div>
+        <span>菜单列表</span>
+        <div ></div>
     </div>
     <form class="layui-form">
         {if condition="$pid gt 0"}
@@ -56,7 +56,7 @@
                         <input class="layui-input" type="text" name="actions[{$vo.id}]" value="{$vo.action}">
                     </td>
                     <td>
-                        <input class="layui-input" type="checkbox" name="hiddens[{$vo.id}]" lay-skin="primary" value=1
+                        <input class="layui-input" type="checkbox" name="hiddens[{$vo.id}]" {$vo.id==8 ? 'disabled' : ""} lay-skin="primary"  value=1
                                title="隐藏" {$vo.hidden? 'checked' : ''}>
                     </td>
                     <td>

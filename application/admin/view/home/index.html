@@ -23,7 +23,7 @@
 	<!--header start-->
 		<div class="admin-header">
 			<span class="admin-header-title">后台管理系统</span>
-			<span class="admin-header-userInfo">{$admin.username}【系统管理员】<span><a href="javascript:;">退出</a></span></span>
+			<span class="admin-header-userInfo">{$admin.username}【系统管理员】<span><a href="javascript:;" onclick="logout()">退出</a></span></span>
 		</div>
 	<!--header end-->
 	<!--menuBar start-->
@@ -53,9 +53,10 @@
 	</div>
 	<!--main end-->
 	<script>
-        layui.use('element', function(){
+        layui.use(['element','layer'], function(){
             var element = layui.element;
             $ = layui.jquery;
+            layer = layui.layer;
 
             getMenuHeight();
         });
@@ -78,6 +79,16 @@
 		{
 		    var src = $(obj).attr('src');
 		    $('.admin-main-frame').attr('src',src);
+		}
+		//退出
+		function logout()
+		{
+            layer.confirm('您确定要退出吗？', {
+                btn: ['确定','取消']
+            }, function(){
+                window.location.href = '/admin/account/logout';
+            });
+
 		}
 	</script>
 </body>

@@ -12,6 +12,12 @@ class Account extends Controller
     {
         return $this->fetch();
     }
+    //退出
+    public function logout()
+    {
+        session('admin', null);
+        return $this->fetch('login');
+    }
     //管理员登录验证
     public function doLogin()
     {
@@ -49,8 +55,8 @@ class Account extends Controller
             exit(json_encode(array('code'=>1, 'message'=>'该用户已被禁用')));
         }
         //验证成功
-        $admin['last_login_at'] = $data['last_login_at'] = time();
-        $admin['last_login_ip'] = $data['last_login_ip'] = $_SERVER['REMOTE_ADDR'];
+        $data['last_login_at'] = time();
+        $data['last_login_ip'] = $_SERVER['REMOTE_ADDR'];
         $sysdb->table('admins')->where(array('id'=>$admin['id']))->update($data);
         session('admin',$admin);
         exit(json_encode(array('code'=>0, 'message'=>'登录成功')));
