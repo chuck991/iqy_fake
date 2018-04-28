@@ -58,13 +58,22 @@
 		layui.use(['layer'], function(){
 		    $ = layui.jquery;
 		    layer = layui.layer;
+
+		    //用户名	控件获取焦点
+		    $('#username').focus();
+		    //回车按钮提交登录信息
+			$('input').keydown(function(e){
+			    if(e.keyCode == 13)
+				{
+				    doLogin();
+				}
+			});
 		});
 
 		//验证码点击刷新
 		function flashCode()
 		{
-            var captcha = document.getElementById('captcha');
-            captcha.src = "{:captcha_src()}?" + Math.random();
+            $('#captcha').attr('src', "{:captcha_src()}?random=" + Math.random());
 		}
 
 		//登录
@@ -98,8 +107,7 @@
 				} else if (res.code == 2){
                     layer.alert(res.message,{icon:2});
                     //此状况为在验证码校验通过后但数据库为查到数据，因验证码验证成功后会重置，所以需要刷新页面验证码
-                    var captcha = document.getElementById('captcha');
-                    captcha.src = "{:captcha_src()}?" + Math.random();
+                    flashCode();
 				} else {
 				    layer.msg(res.message);
 				    setTimeout(function(){window.location.href='/admin/home/index';},1000);
