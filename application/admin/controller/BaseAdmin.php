@@ -19,6 +19,11 @@ class BaseAdmin extends Controller
             exit;
         }
         $this->db = new Sysdb();
+        //获取网站配置信息
+        $site = $this->db->table('sites')->where(array('names'=>'site'))->item();
+        $site && $site['values'] = json_decode($site['values']);
+        $this->assign('admin',$this->_admin);
+        $this->assign('site',$site);
     }
 
     //获得菜单树

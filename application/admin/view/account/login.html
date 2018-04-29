@@ -109,7 +109,7 @@
                     //此状况为在验证码校验通过后但数据库为查到数据，因验证码验证成功后会重置，所以需要刷新页面验证码
                     flashCode();
 				} else {
-				    layer.msg(res.message);
+				    layer.msg(res.message, {'icon':1});
 				    setTimeout(function(){window.location.href='/admin/home/index';},1000);
 				}
 			}, 'json');

@@ -16,7 +16,7 @@ class Home extends BaseAdmin
     public function index()
     {
         $res = array();
-        //获取角色
+        //获取角色,获得角色所对应的菜单
         $role = $this->db->table('admin_groups')->where(array('id'=>$this->_admin['gid']))->item();
         if ($role)
         {
@@ -24,26 +24,27 @@ class Home extends BaseAdmin
         }
         if($role['rights'])
         {
+            //过滤被隐藏和禁用的菜单项
             $where = "id in(" . implode(',', $role['rights']) . ") and hidden=0 and status=0";
             $res = $this->db->table('admin_menus')->where($where)->cates('id');
             $res && $res = $this->getTree($res);
 
         }
         $menus = array();
+        //将菜单封装成二级菜单，顶级菜单为1级，其余均为二级
         foreach($res as $tree)
         {
             $tree['childs'] = isset($tree['childs']) ? $this->formatMenu($tree['childs']) : false;
             $menus[] = $tree;
         }
-
         $this->assign('menus', $menus);
-        $this->assign('admin',session('admin'));
+        $this->assign('role', $role);
+
         return $this->fetch();
     }
     //后台主页欢迎界面
     public function welcome()
     {
-        $this->assign('admin',session('admin'));
         return $this->fetch();
     }
 

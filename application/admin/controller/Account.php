@@ -16,7 +16,7 @@ class Account extends Controller
     public function logout()
     {
         session('admin', null);
-        return $this->fetch('login');
+        exit(json_encode(array('code'=>0,'message'=>'已登出')));
     }
     //管理员登录验证
     public function doLogin()
