@@ -52,8 +52,9 @@ class Account extends Controller
         //验证用户是否被禁用
         if ($admin['status'] == 1)
         {
-            exit(json_encode(array('code'=>1, 'message'=>'该用户已被禁用')));
+            exit(json_encode(array('code'=>2, 'message'=>'该用户已被禁用')));
         }
+
         //验证成功
         $data['last_login_at'] = time();
         $data['last_login_ip'] = $_SERVER['REMOTE_ADDR'];

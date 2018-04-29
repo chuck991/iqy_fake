@@ -20,4 +20,39 @@ class BaseAdmin extends Controller
         }
         $this->db = new Sysdb();
     }
+
+    //获得菜单树
+    public function getTree($items)
+    {
+        $tree = array();
+        foreach ($items as $item)
+        {
+            if(isset($items[$item['pid']]))
+            {
+                //非顶级菜单
+                $items[$item['pid']]['childs'][] = &$items[$item['id']];
+            } else{
+                //顶级菜单
+                $tree[] = &$items[$item['id']];
+            }
+        }
+        return $tree;
+    }
+    //格式化菜单列表
+    public function formatMenu($items,&$res = array() )
+    {
+        foreach($items as $item)
+        {
+            if(!isset($item['childs']))
+            {
+                $res[] = $item;
+            } else{
+                $tmp = $item['childs'];
+                unset($item['childs']);
+                $res[] = $item;
+                $this->formatMenu($tmp,$res);
+            }
+        }
+        return $res;
+    }
 }

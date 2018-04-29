@@ -33,6 +33,7 @@
 			<div class="layui-colla-item">
 				<h2 class="layui-colla-title">{$vo.title}</h2>
 				<div class="layui-colla-content">
+					{if condition="$vo.childs"}
 					<ul class="layui-nav layui-nav-tree" lay-filter="test">
 						{volist name='vo.childs' id='vo2'}
 						<li class="layui-nav-item">
@@ -40,6 +41,7 @@
 						</li>
 						{/volist}
 					</ul>
+					{/if}
 				</div>
 			</div>
 			{/volist}

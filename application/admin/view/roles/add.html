@@ -24,8 +24,8 @@
                 <label class="layui-form-label">权限列表</label>
                 {volist name='menus' id='vo'}
                 <div class="layui-input-block">
-                    <input type="checkbox" class="layui-checkbox" name="rights[]"
-                    <?php if (in_array($vo['id'], $role['rights'])): ?>checked<?php endif; ?> value="{$vo.id}" title="{$vo.title}">
+                    <input type="checkbox" class="layui-checkbox"  title="{$vo.title}"
+                           name="rights[]" <?php if (in_array($vo['id'], $role['rights'])): ?>checked<?php endif; ?> value="{$vo.id}">
                     <hr>
                     {volist name='vo.childs' id='cvo'}
                     <input type="checkbox" lay-skin="primary" class="layui-checkbox" name="rights[]"
