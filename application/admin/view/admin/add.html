@@ -100,7 +100,7 @@
                     layer.alert(res.message,{icon:2});
                     return;
                 } else{
-                    layer.msg(res.message);
+                    layer.msg(res.message, {icon:1});
                     setTimeout(function(){ parent.window.location.reload(); }, 1000);
 
                 }

@@ -26,7 +26,7 @@ class Home extends BaseAdmin
         {
             //过滤被隐藏和禁用的菜单项
             $where = "id in(" . implode(',', $role['rights']) . ") and hidden=0 and status=0";
-            $res = $this->db->table('admin_menus')->where($where)->cates('id');
+            $res = $this->db->table('admin_menus')->where($where)->order('sort')->cates('id');
             $res && $res = $this->getTree($res);
 
         }

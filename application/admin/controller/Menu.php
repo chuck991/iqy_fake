@@ -19,7 +19,7 @@ class Menu extends BaseAdmin
          $item = $this->db->table('admin_menus')->where(array('id'=>$pid))->item();
          $back_id = $item['pid'];
       }
-      $data['lists'] = $this->db->table('admin_menus')->where(array('pid'=>$pid))->lists();
+      $data['lists'] = $this->db->table('admin_menus')->where(array('pid'=>$pid))->order('sort')->lists();
       $this->assign('data', $data);
       $this->assign('back_id',$back_id);
       $this->assign('pid',$pid);

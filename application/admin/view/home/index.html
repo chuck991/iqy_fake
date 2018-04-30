@@ -94,12 +94,12 @@
 		function logout()
 		{
             layer.confirm('您确定要退出吗？', {
-                btn: ['确定','取消'],'icon':3
+                btn: ['确定','取消'],icon:3
             }, function(){
                 $.get('/admin/account/logout', function(res){
                     if (res.code > 0)
 					{
-					    layer.alert(res.message, {'icon':2});
+					    layer.alert(res.message, {icon:2});
 					    return;
 					} else{
                         window.location.href='/admin/account/login';
