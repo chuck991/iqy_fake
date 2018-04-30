@@ -40,9 +40,22 @@ class Video extends BaseAdmin
     {
         $id = (int)input('get.id');
         $data['video'] = $this->db->table('videos')->where(array('id'=>$id))->item();
-        $data['channels'] = $this->db->table('labels')->where(array('flag'=>'channel'))->lists();
-        $data['charges'] = $this->db->table('labels')->where(array('flag'=>'charge'))->lists();
-        $data['areas'] = $this->db->table('labels')->where(array('flag'=>'area'))->lists();
+
+        $labels = $this->db->table('labels')->lists();
+        foreach ($labels as $key => $value)
+        {
+            switch ($value['flag']){
+                case 'channel':
+                    $data['channels'][] = $value;
+                    break;
+                case 'charge':
+                    $data['charges'][] = $value;
+                    break;
+                case 'area':
+                    $data['areas'][] = $value;
+                    break;
+            }
+        }
         $this->assign('data',$data);
         return $this->fetch();
     }
