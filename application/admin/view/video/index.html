@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/plugins/layui/css/layui.css">
+    <script type="text/javascript" src="__STATIC__/plugins/layui/layui.js"></script>
+    <style type="text/css">
+        .admin-main-body{padding: 10px;}
+        .admin-main-header span{background: #009688;margin-left:30px; color: #ffffff;padding: 10px;}
+        .admin-main-header div{border-bottom: solid 2px #009688;margin-top: 8px;}
+        .admin-main-header button{float: right;margin-top: -5px;}
+        .admin-danger{color: red;}
+        .admin-main-back{float: right; margin:5px 0px;}
+        .input-width-xs{width: 50px;}
+        .input-width-sm{width: 100px;}
+        .pages{float: right;}
+        .video-search{margin-top:10px;}
+
+    </style>
+</head>
+<body class="admin-main-body">
+<div class="admin-main-header">
+    <span>影片列表</span>
+    <button class="layui-btn layui-btn-sm" onclick="add()">添加</button>
+    <div ></div>
+</div>
+    <div class="layui-form-item video-search">
+        <div class="layui-input-inline">
+            <input type="text" placeholder="请输入影片标题" class="layui-input" name="wd" value="{$data.wd}">
+        </div>
+        <button class="layui-btn layui-btn-primary" onclick="searchs()"><i class="layui-icon">&#xe615;</i>搜索</button>
+    </div>
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>名称</th>
+            <th>频道</th>
+            <th>资费</th>
+            <th>地区</th>
+            <th>评分</th>
+            <th>PV</th>
+            <th>添加时间</th>
+            <th>状态</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {volist name="videos.lists" id="vo"}
+        <tr>
+            <td>{$vo.id}</td>
+            <td>{$vo.title}</td>
+            <td>{:isset($data['labels'][$vo['channel_id']]) ? $data['labels'][$vo['channel_id']]['title'] : ''}</td>
+            <td>{:isset($data['labels'][$vo['charge_id']]) ? $data['labels'][$vo['charge_id']]['title'] : ''}</td>
+            <td>{:isset($data['labels'][$vo['area_id']]) ? $data['labels'][$vo['area_id']]['title'] : ''}</td>
+            <td>{$vo.score/10}</td>
+            <td>{$vo.pv}</td>
+            <td>{:date('Y-m-d H:i:s',$vo.create_at)}</td>
+            <td>{$vo.status == 0 ? '<span class="admin-danger">未上线</span>' : '已发布'}</td>
+            <td>
+                <button class="layui-btn layui-btn-xs" onclick="add({$vo['id']});return false;">编辑</button>
+                <button class="layui-btn layui-btn-xs layui-btn-danger" onclick="del({$vo['id']});return false;">删除</button>
+            </td>
+        </tr>
+        {/volist}
+        </tbody>
+    </table>
+    <div id="pages" class="pages"></div>
+<script type="text/javascript">
+    layui.use(['layer', 'form', 'laypage'], function(){
+        layer = layui.layer;
+        form = layui.form;
+        $ = layui.jquery;
+        var laypage = layui.laypage;
+
+        laypage.render({
+            elem: 'pages'
+            ,count: {$videos.total}
+            ,limit: {$data.pageSize}
+            ,curr: {$data.page}
+            ,jump: function(obj, first){
+                    if(!first){
+                        searchs(obj.curr);
+
+                    }
+            }
+        });
+    });
+    //影片添加
+    function add(id)
+    {
+        layer.open({
+            type: 2,
+            title: id > 0 ? '编辑影片信息' : '添加影片',
+            shade: 0.3,
+            area: ['800px', '500px'],
+            content: '/admin/video/add?id=' +id,
+        });
+    }
+    //影片删除
+    function del(id)
+    {
+        layer.confirm('您确定要删除影片吗？', {
+            btn: ['确定','取消'],'icon':3
+        }, function(){
+            $.post('/admin/video/del', {'id':id}, function(res){
+                if (res.code > 0)
+                {
+                    layer.alert(res.message,{icon:2});
+                    return;
+                }
+                layer.msg(res.message, {icon:1});
+                setTimeout(function(){window.location.reload();}, 1000);
+            }, 'json')
+        });
+    }
+    //影片搜索
+    function searchs(curpages)
+    {
+        var wd = $.trim($('input[name=wd]').val());
+        var url = '?page='+curpages;
+        if (wd != '')
+        {
+            url += '&wd='+wd;
+        }
+        window.location.href = url;
+    }
+</script>
+</body>
+</html>

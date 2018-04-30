@@ -17,21 +17,21 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">角色名称</label>
                 <div class="layui-input-block">
-                    <input type="text" class="layui-input" value="{$role.group_name?$role.group_name:''}" name="group_name">
+                    <input type="text" class="layui-input" id="pp" value="{$role.group_name?$role.group_name:''}" name="group_name">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">权限列表</label>
                 {volist name='menus' id='vo'}
+                <hr>
                 <div class="layui-input-block">
-                    <input type="checkbox" class="layui-checkbox"  title="{$vo.title}"
+                    <input type="checkbox" class="layui-checkbox" lay-skin="primary" onchange="pic(this)" title="{$vo.title}"
                            name="rights[]" <?php if (in_array($vo['id'], $role['rights'])): ?>checked<?php endif; ?> value="{$vo.id}">
                     <hr>
                     {volist name='vo.childs' id='cvo'}
                     <input type="checkbox" lay-skin="primary" class="layui-checkbox" name="rights[]"
                     <?php if (in_array($cvo['id'], $role['rights'])): ?>checked<?php endif; ?> value="{$cvo.id}" title="{$cvo.title}">
                     {/volist}
-                    <hr>
                 </div>
                 {/volist}
             </div>

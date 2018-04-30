@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/plugins/layui/css/layui.css">
+    <script type="text/javascript" src="__STATIC__/plugins/layui/layui.js"></script>
+    <style type="text/css">
+        .admin-main-body{padding: 10px;}
+        .admin-main-header span{background: #009688;margin-left:30px; color: #ffffff;padding: 10px;}
+        .admin-main-header div{border-bottom: solid 2px #009688;margin-top: 8px;}
+        .admin-main-header button{float: right;margin-top: -5px;}
+        .admin-danger{color: red;}
+        .admin-main-back{float: right; margin:5px 0px;}
+    </style>
+</head>
+<body class="admin-main-body">
+<div class="admin-main-header">
+    <span>{$cname}列表</span>
+    <div ></div>
+</div>
+<form class="layui-form">
+    <input type="hidden" name="flag" value="{$flag}">
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>{$cname}名称</th>
+            <th>排序</th>
+            <th>是否禁用</th>
+        </tr>
+        </thead>
+        <tbody>
+        {volist name="data.lists" id="vo"}
+        <tr>
+            <td>{$vo.id}</td>
+            <td>
+                <input class="layui-input" type="text" name="titles[{$vo.id}]" value="{$vo.title}">
+            </td>
+            <td>
+                <input class="layui-input" type="text" name="sorts[{$vo.id}]" value="{$vo.sort}">
+            </td>
+            <td>
+                <input class="layui-input" type="checkbox" name="status[{$vo.id}]" lay-skin="primary" value=1
+                       title="禁用" {$vo.status? 'checked' : ''}>
+            </td>
+        </tr>
+        {/volist}
+        <tr>
+            <td></td>
+            <td>
+                <input class="layui-input" type="text" name="titles[0]" >
+            </td>
+            <td>
+                <input class="layui-input" type="text" name="sorts[0]"
+            </td>
+            <td>
+                <input class="layui-input" type="checkbox" name="status[0]" lay-skin="primary" value=1
+                       title="禁用">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+<button class="layui-btn " onclick="save()">保存</button>
+<script type="text/javascript">
+    layui.use(['layer', 'form'], function(){
+        layer = layui.layer;
+        form = layui.form;
+        $ = layui.jquery;
+    });
+    //菜单保存
+    function save()
+    {
+        $.post('/admin/label/save', $('form').serialize(), function(res){
+            if (res.code > 0)
+            {
+                layer.alert(res.message,{'icon':2});
+                return;
+            }
+            layer.msg(res.message);
+            setTimeout(function(){window.location.reload();}, 1000);
+        }, 'json')
+    }
+</script>
+</body>
+</html>

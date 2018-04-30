@@ -3,9 +3,14 @@
 <head>
 	<meta charset="UTF-8">
 	<title></title>
+	<style type="text/css">
+		.admin-welcome{text-align: center;color: #8D8D8D;}
+	</style>
 </head>
 <body>
-	<h1>欢迎使用后台管理系统</h1>
-	<div>上次登录时间为：{:date('Y-m-d H:i:s', $admin.last_login_at)}      ip地址：{$admin.last_login_ip}</div>
+	<div class="admin-welcome">
+		<h1 >欢迎使用后台管理系统</h1>
+		<div>上次登录时间：{:date('Y-m-d H:i:s', $admin.last_login_at)}&nbsp;&nbsp;&nbsp;ip地址：{$admin.last_login_ip}</div>
+	</div>
 </body>
 </html>
