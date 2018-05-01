@@ -15,7 +15,7 @@ class Slide extends BaseAdmin
     public function top()
     {
         $data['type'] = 0;
-        $data['slides'] = $this->db->table('slides')->where(array('type'=> $data['type']))->lists();
+        $data['slides'] = $this->db->table('slides')->where(array('type'=> $data['type']))->order('sort')->cates('id');
         $this->assign('data',$data);
         return $this->fetch('index');
     }
@@ -23,7 +23,7 @@ class Slide extends BaseAdmin
     public function hot()
     {
         $data['type'] = 1;
-        $data['slides'] = $this->db->table('slides')->where(array('type'=> $data['type']))->lists();
+        $data['slides'] = $this->db->table('slides')->where(array('type'=> $data['type']))->order('sort')->cates('id');
         $this->assign('data',$data);
         return $this->fetch('index');
     }
@@ -31,7 +31,7 @@ class Slide extends BaseAdmin
     public function yule()
     {
         $data['type'] = 2;
-        $data['slides'] = $this->db->table('slides')->where(array('type'=> $data['type']))->lists();
+        $data['slides'] = $this->db->table('slides')->where(array('type'=> $data['type']))->order('sort')->cates('id');
         $this->assign('data',$data);
         return $this->fetch('index');
     }
@@ -99,6 +99,7 @@ class Slide extends BaseAdmin
         {
             exit(json_encode(array('code'=>1, 'message'=>'删除失败')));
         }
+
         exit(json_encode(array('code'=>0, 'message'=>'删除成功')));
     }
 }

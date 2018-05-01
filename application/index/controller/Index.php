@@ -1,10 +1,75 @@
 <?php
 namespace app\index\controller;
 
-class Index
+class Index extends BaseIndex
 {
     public function index()
     {
-        return '<style type="text/css">*{ padding: 0; margin: 0; } .think_default_text{ padding: 4px 48px;} a{color:#2E5CD5;cursor: pointer;text-decoration: none} a:hover{text-decoration:underline; } body{ background: #fff; font-family: "Century Gothic","Microsoft yahei"; color: #333;font-size:18px} h1{ font-size: 100px; font-weight: normal; margin-bottom: 12px; } p{ line-height: 1.6em; font-size: 42px }</style><div style="padding: 24px 48px;"> <h1>:)</h1><p> ThinkPHP V5<br/><span style="font-size:30px">十年磨一剑 - 为API开发设计的高性能框架</span></p><span style="font-size:22px;">[ V5.0 版本由 <a href="http://www.qiniu.com" target="qiniu">七牛云</a> 独家赞助发布 ]</span></div><script type="text/javascript" src="http://tajs.qq.com/stats?sId=9347272" charset="UTF-8"></script><script type="text/javascript" src="http://ad.topthink.com/Public/static/client.js"></script><thinkad id="ad_bd568ce7058a1091"></thinkad>';
+        //首页幻灯片
+        $slides = $this->db->table('slides')->order('sort')->cates('id');
+        foreach ($slides as $key => $slide)
+        {
+            switch ($slide['type'])
+            {
+                case 0:
+                    //首屏
+                    $data['tops'][$key] = $slide;
+                    break;
+                case 1:
+                    //今日热点
+                    $data['hots'][$key] = $slide;
+                    break;
+                case 2:
+                    //综艺
+                    $data['yules'][$key] = $slide;
+                    break;
+            }
+        }
+        //导航
+        $data['labels'] = $this->db->table('labels')->where(array('flag'=>'channel'))->order('sort')->lists();
+        //娱乐
+        $res = $this->db->table('videos')->where(array('channel_id'=>4,'status'=>1))->pages(10);
+        $data['today_hots'] = $res['lists'];
+        $this->assign('data',$data);
+        return $this->fetch();
+    }
+    public function cate()
+    {
+        //页面显示，获得标签
+        $labels = $this->db->table('labels')->cates('id');
+        foreach ($labels as $key => $label)
+        {
+            switch ($label['flag'])
+            {
+                case 'channel':
+                    $data['channels'][$key] = $label;
+                    break;
+                case 'charge':
+                    $data['charges'][$key] = $label;
+                    break;
+                case 'area':
+                    $data['areas'][$key] = $label;
+                    break;
+            }
+        }
+        //逻辑处理
+        //从地址中获取标签
+        $videos['channel_id'] = (int)input('get.channel_id');
+        $videos['charge_id'] = (int)input('get.charge_id');
+        $videos['area_id'] = (int)input('get.area_id');
+        //拼接查询条件
+        $where = array();
+            $videos['channel_id'] > 0 && $where = array_merge($where, array('channel_id'=>$videos['channel_id']));
+            $videos['charge_id'] > 0 && $where = array_merge($where, array('charge_id'=>$videos['charge_id']));
+            $videos['area_id'] > 0 && $where = array_merge($where, array('area_id'=>$videos['area_id']));
+            $where = array_merge($where, array('status'=>1));
+        //分页
+        $data['pageSize'] = 6;
+        $data['videos'] = $this->db->table('videos')->where($where)->order('id desc')->pages($data['pageSize']);
+        $data['page'] = (int)max(1, input('get.page'));
+        //传入页面数据
+        $this->assign('data',$data);
+        $this->assign('videos',$videos);
+        return $this->fetch();
     }
 }

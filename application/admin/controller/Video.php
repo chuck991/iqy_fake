@@ -14,7 +14,7 @@ class Video extends BaseAdmin
     public function index()
     {
         $data['wd'] = trim(input('get.wd'));
-        $data['pageSize'] = 15;
+        $data['pageSize'] = 10;
         $data['page'] = max(1,(int)input('get.page'));
         $where = array();
         $data['wd'] && $where = 'title like "%' . $data['wd'] . '%"';
