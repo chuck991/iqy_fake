@@ -50,6 +50,12 @@ class Index extends BaseIndex
                 case 'area':
                     $data['areas'][$key] = $label;
                     break;
+                case 'type':
+                    $data['types'][$key] = $label;
+                    break;
+                case 'size':
+                    $data['sizes'][$key] = $label;
+                    break;
             }
         }
         //逻辑处理
@@ -57,11 +63,15 @@ class Index extends BaseIndex
         $videos['channel_id'] = (int)input('get.channel_id');
         $videos['charge_id'] = (int)input('get.charge_id');
         $videos['area_id'] = (int)input('get.area_id');
+        $videos['type_id'] = (int)input('get.type_id');
+        $videos['size_id'] = (int)input('get.size_id');
         //拼接查询条件
         $where = array();
             $videos['channel_id'] > 0 && $where = array_merge($where, array('channel_id'=>$videos['channel_id']));
             $videos['charge_id'] > 0 && $where = array_merge($where, array('charge_id'=>$videos['charge_id']));
             $videos['area_id'] > 0 && $where = array_merge($where, array('area_id'=>$videos['area_id']));
+            $videos['type_id'] > 0 && $where = array_merge($where, array('type_id'=>$videos['type_id']));
+            $videos['size_id'] > 0 && $where = array_merge($where, array('size_id'=>$videos['size_id']));
             $where = array_merge($where, array('status'=>1));
         //分页
         $data['pageSize'] = 6;
@@ -70,6 +80,20 @@ class Index extends BaseIndex
         //传入页面数据
         $this->assign('data',$data);
         $this->assign('videos',$videos);
+        return $this->fetch();
+    }
+    //视频播放页面
+    public function video()
+    {
+        $video_id = (int)input('get.vid');
+        $video_id && $data['video'] = $this->db->table('videos')->where(array('id'=>$video_id))->item();
+        $data['channel'] = $this->db->table('labels')->field('title')->where(array('id'=>$data['video']['channel_id']))->item();
+        if ($data['video'] == false)
+        {
+            //未找到相应视频，返回首页
+            return $this->redirect('/index/index/cate');
+        }
+        $this->assign('data',$data);
         return $this->fetch();
     }
 }

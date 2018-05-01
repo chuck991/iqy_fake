@@ -8,7 +8,7 @@
     <meta name="msvalidate.01" content="99E5BCCCE330E1C63C0CC5BDE57AEE80">
     <meta name="Copyright" content="爱奇艺-iQIYI.COM">
     <meta name="author" content="爱奇艺-iQIYI.COM">
-    <title>爱奇艺-全球领先的在线视频网站-海量正版高清视频在线观看</title>
+    <title>{$sites.title.values}-{$sites.desc.values}-海量正版高清视频在线观看</title>
     <meta name="title" content="爱奇艺视频-全球领先的在线视频播放平台" lang="zh-CN">
     <meta property="og:title" content="爱奇艺-全球领先的在线视频网站-海量正版高清视频在线观看" lang="zh-CN">
     <meta name="keywords" content="爱奇艺视频,视频,视频网站,高清视频,电影,电视剧,动漫,综艺,音乐" lang="zh-CN">
@@ -1484,7 +1484,7 @@
                 <div class="header-inner">
                     <div id="nav_logo" class="qy-logo" style="display: block;"><a href="//www.iqiyi.com" title="爱奇艺视频"
                                                                                   class="logo-sprite logo-link"><img
-                            rseat="iQIYI_logo" src="127.0.0.1/iqy_fake/public/static/images/sprite-headLogo-index.png"
+                            rseat="iQIYI_logo" src="/static/images/sprite-headLogo-index.png"
                             title="爱奇艺视频" alt="爱奇艺视频" width="100%" height="100%"></a></div>
                     <div class="qy-nav" style="display: block;"><!----> <!----> <!----> <!----> <!---->
                         <div class="nav-guide nav-link" id="dhBtn">
@@ -2239,7 +2239,7 @@
                         <ul id="txtlist" class="focus-side-list">
                             {volist name='data.tops' id='top'}
                             <li class="focus-side-item {$i == 1 ? 'selected' : ''}">
-                                <a title="{$top.title}" rseat="{$i}" href="{$top.url}" class="focus-side-itemLink">{$top.title}</a>
+                                <a title="{$top.title}" rseat="{$i}" href="/index/index/video?vid={$top.id}" class="focus-side-itemLink">{$top.title}</a>
                             </li>
                             {/volist}
                         </ul>

@@ -12,8 +12,7 @@ class BaseIndex extends Controller
     {
         parent::__construct();
         $this->db = new Sysdb();
-        $site = $this->db->table('sites')->where(array('names'=>'site'))->item();
-        $site && $site['values'] = json_decode($site['values']);
-        $this->assign('site',$site);
+        $sites = $this->db->table('sites')->cates('names');
+        $this->assign('sites',$sites);
     }
 }

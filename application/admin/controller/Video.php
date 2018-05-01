@@ -54,6 +54,15 @@ class Video extends BaseAdmin
                 case 'area':
                     $data['areas'][] = $value;
                     break;
+                case 'type':
+                    $data['types'][] = $value;
+                    break;
+                case 'size':
+                    $data['sizes'][] = $value;
+                    break;
+                case 'my_time':
+                    $data['my_times'][] = $value;
+                    break;
             }
         }
         $this->assign('data',$data);
@@ -84,6 +93,8 @@ class Video extends BaseAdmin
         $data['channel_id'] = input('post.channel_id');
         $data['charge_id'] = input('post.charge_id');
         $data['area_id'] = input('post.area_id');
+        $data['type_id'] = input('post.type_id');
+        $data['size_id'] = input('post.size_id');
         $data['url'] = trim(input('post.url'));
         $data['keywords'] = trim(input('post.keywords'));
         $data['desc'] = trim(input('post.desc'));

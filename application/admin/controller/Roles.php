@@ -31,8 +31,9 @@ class Roles extends BaseAdmin
             $results[] = $menuTree;
         }
 
-        //编辑操作
+        //更新页面数据获取
         $role = $this->db->table('admin_groups')->where(array('id'=>$id))->item();
+
         $role['rights'] = isset($role['rights'])? json_decode($role['rights']) : array();
 
         $this->assign('role', $role);

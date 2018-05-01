@@ -23,7 +23,13 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">网站名称</label>
                 <div class="layui-input-block">
-                    <input type="text" name="title" class="layui-input" value="{$site.values}">
+                    <input type="text" name="title" class="layui-input" value="{$sites.title.values}">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">网站描述</label>
+                <div class="layui-input-block">
+                    <input type="text" name="desc" class="layui-input" value="{$sites.desc.values}">
                 </div>
             </div>
         </form>
@@ -46,7 +52,7 @@
                 layer.alert('网站名不能为空', {'icon':2});
                 return;
             }
-            $.post('/admin/site/save',{'title':title}, function(res){
+            $.post('/admin/site/save',$('form').serialize(), function(res){
                 if (res.code > 0)
                 {
                     layer.alert(res.message, {'icon':2});

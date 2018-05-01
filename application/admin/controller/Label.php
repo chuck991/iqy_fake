@@ -40,6 +40,36 @@ class Label extends BaseAdmin
         $this->assign('cname','地区');
         return $this->fetch('index');
     }
+    //类型
+    public function type()
+    {
+        $flag = 'type';
+        $data['lists'] = $this->db->table('labels')->where(array('flag'=>$flag))->lists();
+        $this->assign('data',$data);
+        $this->assign('flag',$flag);
+        $this->assign('cname','类型');
+        return $this->fetch('index');
+    }
+    //规格
+    public function size()
+    {
+        $flag = 'size';
+        $data['lists'] = $this->db->table('labels')->where(array('flag'=>$flag))->lists();
+        $this->assign('data',$data);
+        $this->assign('flag',$flag);
+        $this->assign('cname','规格');
+        return $this->fetch('index');
+    }
+    //我的年代
+    public function Mytime()
+    {
+        $flag = 'Mytime';
+        $data['lists'] = $this->db->table('labels')->where(array('flag'=>$flag))->lists();
+        $this->assign('data',$data);
+        $this->assign('flag',$flag);
+        $this->assign('cname','我的年代');
+        return $this->fetch('index');
+    }
     //保存
     public function save()
     {

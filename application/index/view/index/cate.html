@@ -3,9 +3,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-    <title>热门影视大全-好看的影视排行榜-爱奇艺</title>
+    <title>热门{if condition="$videos.channel_id eq 0"}影视{else}<?php echo $data['channels'][$videos['channel_id']]['title'] ;?>{/if}大全-好看的{if condition="$videos.channel_id eq 0"}影视{else}<?php echo $data['channels'][$videos['channel_id']]['title'] ;?>{/if}排行榜-爱奇艺</title>
     <meta name="description"
-          content="热门影视大全，好看的影视排行榜，爱奇艺提供全网最丰富的热门电视剧，欢迎在线观看"/>
+          content="热门{if condition="$videos.channel_id eq 0"}影视{else}<?php echo $data['channels'][$videos['channel_id']]['title'] ;?>{/if}大全，好看的{if condition="$videos.channel_id eq 0"}影视{else}<?php echo $data['channels'][$videos['channel_id']]['title'] ;?>{/if}排行榜，爱奇艺提供全网最丰富的热门电视剧，欢迎在线观看"/>
 
     <link rel="shortcut icon" href="//www.qiyipic.com/common/images/logo.ico" type="image/icon"/>
     <link rel="stylesheet" type="text/css" href="//static.qiyi.com/css/common/v3-basic/v3-basic_other.css"/>
@@ -628,14 +628,16 @@
                     <h3>频道：</h3>
                     <ul class="mod_category_item">
                         <li  class="{$videos['channel_id'] > 0 ? '' : 'selected'}" >
-                            <a href="/index/index/cate?charge_id={$videos.charge_id}&area_id={$videos['area_id']}">全部</a>
+                            <a href="/index/index/cate?charge_id={$videos.charge_id}&area_id={$videos['area_id']}&type_id={$videos['type_id']}&size_id={$videos['size_id']}
+                                ">全部</a>
                         </li>
                         {volist name='data.channels' id='channel'}
                         <li  class="{$channel['id'] == $videos['channel_id'] ? 'selected' : ''}" value="{$channel['id']}">
-                            <a href="/index/index/cate?channel_id={$channel.id}&charge_id={$videos.charge_id}&area_id={$videos.area_id}">{$channel.title}</a>
+                            <a href="/index/index/cate?channel_id={$channel.id}&charge_id={$videos.charge_id}&area_id={$videos.area_id}&type_id={$videos.type_id}&size_id={$videos.size_id}
+                                ">{$channel.title}</a>
                         </li>
                         {/volist}
-                        <li class="close-mod_btn">
+                        <li class="close-mod_btn" style="display: none">
                             <a data-searchpingback-elem="link" data-searchpingback-param="ptype=11" href="javascript:;" j-delegate="action"><em class="vm-inline">收起</em><i class="site-icons ico-explain-t"></i></a>
                         </li>
                     </ul>
@@ -647,111 +649,47 @@
                     <h3>资费：</h3>
                     <ul class="mod_category_item">
                         <li  class="{$videos['charge_id'] > 0 ? '' : 'selected'}" id="test" >
-                            <a href="/index/index/cate?channel_id={$videos.channel_id}&area_id={$videos.area_id}">全部</a>
+                            <a href="/index/index/cate?channel_id={$videos.channel_id}&area_id={$videos.area_id}&type_id={$videos.type_id}&size_id={$videos.size_id}
+                                ">全部</a>
                         </li>
                         {volist name='data.charges' id="charge"}
                         <li class="{$charge['id'] == $videos['charge_id'] ? 'selected' : ''}" value="{$charge['id']}">
-                            <a href="/index/index/cate?channel_id={$videos.channel_id}&charge_id={$charge.id}&area_id={$videos.area_id}">{$charge.title}</a>
+                            <a href="/index/index/cate?channel_id={$videos.channel_id}&charge_id={$charge.id}&area_id={$videos.area_id}&type_id={$videos.type_id}&size_id={$videos.size_id}
+                                ">{$charge.title}</a>
                         </li>
                         {/volist}
                     </ul>
                 </div>
 
-                <div class="mod_sear_list  mod_sear_list_open       " >
+                <div class="mod_sear_list  mod_sear_list_open " >
                     <h3>地区：</h3>
                     <ul class="mod_category_item">
                         <li class="{$videos['area_id'] > 0 ? '' : 'selected'}">
-                            <a href="/index/index/cate?channel_id={$videos.channel_id}&charge_id={$videos.charge_id}">全部</a>
+                            <a href="/index/index/cate?channel_id={$videos.channel_id}&charge_id={$videos.charge_id}&type_id={$videos.type_id}&size_id={$videos.size_id}
+                                ">全部</a>
                         </li>
                         {volist name="data.areas" id="area"}
                         <li class="{$area['id'] == $videos['area_id'] ? 'selected' : ''}" value="{$area['id']}">
-                            <a href="/index/index/cate?channel_id={$videos.channel_id}&charge_id={$videos.charge_id}&area_id={$area.id}">{$area.title}</a>
+                            <a href="/index/index/cate?channel_id={$videos.channel_id}&charge_id={$videos.charge_id}&area_id={$area.id}&type_id={$videos.type_id}&size_id={$videos.size_id}
+                                ">{$area.title}</a>
                         </li>
                         {/volist}
                     </ul>
                 </div>
-                <div class="mod_sear_list       "          data-widget-expcol="expcol" data-expcol-cls="mod_sear_list_open" >
+                <div class="mod_sear_list " data-widget-expcol="expcol" data-expcol-cls="mod_sear_list_open" >
                     <h3>类型：</h3>
                     <ul class="mod_category_item">
-                        <li class="selected">
-                            <a href="#">全部</a>
+                        <li class="{$videos['type_id'] > 0 ? '' : 'selected'}">
+                            <a href="/index/index/cate?channel_id={$videos.channel_id}&charge_id={$videos.charge_id}&area_id={$videos.area_id}&size_id={$videos.size_id}
+                                ">全部</a>
                         </li>
-                        <li>
-                            <a href="/www/2/-11992------------11-1-1-iqiyi--.html">自制</a>
+                        {volist name="data.types" id="type"}
+                        <li class="{$type['id'] == $videos['type_id'] ? 'selected' : ''}">
+                            <a href="/index/index/cate?channel_id={$videos.channel_id}&charge_id={$videos.charge_id}&area_id={$videos.area_id}&type_id={$type.id}&size_id={$videos.size_id}
+                                ">{$type.title}</a>
                         </li>
-                        <li>
-                            <a href="/www/2/-24------------11-1-1-iqiyi--.html">古装</a>
-                        </li>
-                        <li>
-                            <a href="/www/2/-20------------11-1-1-iqiyi--.html">言情</a>
-                        </li>
-                        <li>
-                            <a href="/www/2/-23------------11-1-1-iqiyi--.html">武侠</a>
-                        </li>
-                        <li>
-                            <a href="/www/2/-30------------11-1-1-iqiyi--.html">偶像</a>
-                        </li>
-                        <li>
-                            <a href="/www/2/-1654------------11-1-1-iqiyi--.html">家庭</a>
-                        </li>
-                        <li>
-                            <a href="/www/2/-1653------------11-1-1-iqiyi--.html">青春</a>
-                        </li>
-                        <li>
-                            <a href="/www/2/-24064------------11-1-1-iqiyi--.html">都市</a>
-                        </li>
-                        <li>
-                            <a href="/www/2/-135------------11-1-1-iqiyi--.html">喜剧</a>
-                        </li>
-                        <li>
-                            <a href="/www/2/-27916------------11-1-1-iqiyi--.html">战争</a>
-                        </li>
-                        <li>
-                            <a href="/www/2/-1655------------11-1-1-iqiyi--.html">军旅</a>
-                        </li>
-                        <li>
-                            <a href="/www/2/-290------------11-1-1-iqiyi--.html">谍战</a>
-                        </li>
-                        <li>
-                            <a href="/www/2/-32------------11-1-1-iqiyi--.html">悬疑</a>
-                        </li>
-                        <li>
-                            <a href="/www/2/-149------------11-1-1-iqiyi--.html">罪案</a>
-                        </li>
-                        <li>
-                            <a href="/www/2/-148------------11-1-1-iqiyi--.html">穿越</a>
-                        </li>
-                        <li>
-                            <a href="/www/2/-139------------11-1-1-iqiyi--.html">宫廷</a>
-                        </li>
-                        <li>
-                            <a href="/www/2/-21------------11-1-1-iqiyi--.html">历史</a>
-                        </li>
-                        <li>
-                            <a href="/www/2/-145------------11-1-1-iqiyi--.html">神话</a>
-                        </li>
-                        <li>
-                            <a href="/www/2/-34------------11-1-1-iqiyi--.html">科幻</a>
-                        </li>
-                        <li>
-                            <a href="/www/2/-27------------11-1-1-iqiyi--.html">年代</a>
-                        </li>
-                        <li>
-                            <a href="/www/2/-29------------11-1-1-iqiyi--.html">农村</a>
-                        </li>
-                        <li>
-                            <a href="/www/2/-140------------11-1-1-iqiyi--.html">商战</a>
-                        </li>
-                        <li>
-                            <a href="/www/2/-24063------------11-1-1-iqiyi--.html">剧情</a>
-                        </li>
-                        <li>
-                            <a href="/www/2/-27881------------11-1-1-iqiyi--.html">奇幻</a>
-                        </li>
-                        <li>
-                            <a href="/www/2/-24065------------11-1-1-iqiyi--.html">网剧</a>
-                        </li>
-                        <li class="close-mod_btn">
+                        {/volist}
+                        <li class="close-mod_btn" style="display: none">
                             <a href="javascript:;" j-delegate="action"><em class="vm-inline">收起</em><i class="site-icons ico-explain-t"></i></a>
                         </li>
                     </ul>
@@ -760,37 +698,27 @@
                                 class="site-icons ico-explain-b"></i></a>
                     </div>
                 </div>
-                <div class="mod_sear_list ">
-                    <h3>我的年代：</h3>
+                <div class="mod_sear_list">
+                    <h3>规格：</h3>
                     <ul class="mod_category_item">
-                        <li  class="selected" >
-                            <a data-searchpingback-elem="link" data-searchpingback-param="ptype=6" href="/www/2/-------------11-1-1-iqiyi--.html">全部</a>
+                        <li class="{$videos['size_id'] > 0 ? '' : 'selected'}">
+                            <a href="/index/index/cate?channel_id={$videos.channel_id}&charge_id={$videos.charge_id}&area_id={$videos.area_id}&type_id={$videos.type_id}
+                                ">全部</a>
                         </li>
-                        <li >
-                            <a data-searchpingback-elem="link" data-searchpingback-param="ptype=6" href="/www/2/-----------2018--11-1-1-iqiyi--.html">2018</a>
+                        {volist name="data.sizes" id="size"}
+                        <li class="{$size['id'] == $videos['size_id'] ? 'selected' : ''}">
+                            <a href="/index/index/cate?channel_id={$videos.channel_id}&charge_id={$videos.charge_id}&area_id={$videos.area_id}&type_id={$videos.type_id}&size_id={$size.id}
+                                ">{$size.title}</a>
                         </li>
-                        <li >
-                            <a data-searchpingback-elem="link" data-searchpingback-param="ptype=6" href="/www/2/-----------2017--11-1-1-iqiyi--.html">2017</a>
-                        </li>
-                        <li >
-                            <a data-searchpingback-elem="link" data-searchpingback-param="ptype=6" href="/www/2/-----------2016--11-1-1-iqiyi--.html">2016</a>
-                        </li>
-                        <li >
-                            <a data-searchpingback-elem="link" data-searchpingback-param="ptype=6" href="/www/2/-----------2011_2015--11-1-1-iqiyi--.html">2015-2011</a>
-                        </li>
-                        <li >
-                            <a data-searchpingback-elem="link" data-searchpingback-param="ptype=6" href="/www/2/-----------2000_2010--11-1-1-iqiyi--.html">2010-2000</a>
-                        </li>
-                        <li >
-                            <a data-searchpingback-elem="link" data-searchpingback-param="ptype=6" href="/www/2/-----------1990_1999--11-1-1-iqiyi--.html">90年代</a>
-                        </li>
-                        <li >
-                            <a data-searchpingback-elem="link" data-searchpingback-param="ptype=6" href="/www/2/-----------1980_1989--11-1-1-iqiyi--.html">80年代</a>
-                        </li>
-                        <li >
-                            <a data-searchpingback-elem="link" data-searchpingback-param="ptype=6" href="/www/2/-----------1964_1979--11-1-1-iqiyi--.html">更早</a>
+                        {/volist}
+                        <li class="close-mod_btn" style="display: none">
+                            <a href="javascript:;" j-delegate="action"><em class="vm-inline">收起</em><i class="site-icons ico-explain-t"></i></a>
                         </li>
                     </ul>
+                    <div class="openBtn">
+                        <a class="openBtn-txt" href="javascript:;" j-delegate="action"><em class="vm-inline">更多</em><i
+                                class="site-icons ico-explain-b"></i></a>
+                    </div>
                 </div>
                 <div id="block-B" class="mod_sear_list  borNone  mod_sear_linkTag " data-widget-expcol="expcol" data-expcol-cls="mod_sear_list_open">
                     <h3>您还可以搜索：</h3>
@@ -923,7 +851,7 @@
                             <div class="site-piclist_pic">
                                 <a data-qidanadd-albumid="218177801" data-qidanadd-episode="0"  data-qidanadd-channelid="2" data-qidanadd-tvid="1011046500" data-qidanadd-vip="0" data-widget-qidanadd="qidanadd"
                                    data-searchpingback-elem="link" data-searchpingback-param="target=cb4e887baeb20d260e5c6b94f98ae697&ptype=1&site=iqiyi&pos=1" data-qipuid="218177801" alt="{$video.title}" title="{$video.title}"
-                                   href="/index/video/play?vid={$video.id}"class="site-piclist_pic_link" target="_blank">
+                                   href="/index/index/video?vid={$video.id}"class="site-piclist_pic_link" target="_blank">
                                     <img width="180" height="236" rseat="dsjp7" alt="{$video.title}"
                                          title="{$video.title}" src = "{$video.img}"
                                     />
@@ -1098,6 +1026,8 @@
         var channel_id = Number($('.selected:eq(1)').val());
         var charge_id = Number($('.selected:eq(2)').val());
         var area_id = Number($('.selected:eq(3)').val());
+        var type_id = Number($('.selected:eq(4)').val());
+        var size_id = Number($('.selected:eq(5)').val());
         var url = '?page='+current;
         if (channel_id > 0)
         {
@@ -1110,6 +1040,14 @@
         if (area_id > 0)
         {
             url += '&area_id='+area_id;
+        }
+        if (type_id > 0)
+        {
+            url += '&area_id='+type_id;
+        }
+        if (size_id > 0)
+        {
+            url += '&area_id='+size_id;
         }
         window.location.href = url;
     }
