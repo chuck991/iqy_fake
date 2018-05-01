@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/plugins/layui/css/layui.css">
+    <script type="text/javascript" src="__STATIC__/plugins/layui/layui.js"></script>
+    <style type="text/css">
+        .admin-add-body{padding:30px;}
+        .admin-add-form{margin-left: -50px;}
+        .upload-slide-img{height:30px;}
+    </style>
+</head>
+<body class="admin-add-body">
+<div class="admin-add-form">
+    <form class="layui-form">
+        <input type="hidden" name="id" value="{$data.slide.id}">
+        <input type="hidden" name="type" value="{$data.type}">
+        <div class="layui-form-item">
+            <label class="layui-form-label">标题</label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" name="title" value="{$data.slide.title}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">URL</label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" name="url" value="{$data.slide.url}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">图片</label>
+            <div class="layui-input-inline">
+               <button class="layui-btn layui-btn-sm" id="upload_img" onclick="return false;"><i class="layui-icon">&#xe67c;</i>上传</button>
+                <img src="{$data.slide.img}" id="pre_img" class="upload-slide-img">
+            </div>
+
+            <input type="hidden" name="img" value="{$data.slide.img}">
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">排序</label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" name="sort" value="{$data.slide.sort}">
+            </div>
+        </div>
+    </form>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn " onclick="save()">保存</button>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    layui.use(['layer','form','upload'], function(){
+        layer = layui.layer;
+        form = layui.form;
+        $ = layui.jquery;
+        var upload = layui.upload;
+
+        //执行实例
+        var uploadInst = upload.render({
+            elem: '#upload_img'
+            ,url: '/admin/slide/upload_img'
+            ,accept: 'img'
+            ,done: function(res){
+                if (res.code > 0)
+                {
+                    layer.alert(res.message, {'icon':2});
+                    return;
+                }
+                $('#pre_img').attr('src',res.message);
+                $('input[name=img]').val(res.message);
+            }
+            ,error: function(){
+
+            }
+        });
+
+    });
+    //添加数据
+    function save()
+    {
+        var id = parseInt($('input[name=id]').val());
+        var title = $.trim($('input[name=title]').val());
+        var url = $.trim($('input[name=url]').val());
+        var img = $.trim($('input[name=img]').val());
+
+        //前端验证数据
+        if (title == '')
+        {
+            layer.alert('请输入标题',{icon:2});
+            return;
+        }
+        if (url == '')
+        {
+            layer.alert('请输入url地址',{icon:2});
+            return;
+        }
+        if (img == '')
+        {
+            layer.alert('请上传图片',{icon:2});
+            return;
+        }
+        $.post('/admin/slide/save', $("form").serialize(), function(res){
+            if (res.code > 0)
+            {
+                layer.alert(res.message,{icon:2});
+                return;
+            } else{
+                layer.msg(res.message, {icon:1});
+                setTimeout(function(){ parent.window.location.reload(); }, 1000);
+
+            }
+        }, 'json');
+
+    }
+</script>
+</body>
+</html>

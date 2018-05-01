@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/plugins/layui/css/layui.css">
+    <script type="text/javascript" src="__STATIC__/plugins/layui/layui.js"></script>
+    <style type="text/css">
+        .admin-main-body{padding: 10px;}
+        .admin-main-header span{background: #009688;margin-left:30px; color: #ffffff;padding: 10px;}
+        .admin-main-header div{border-bottom: solid 2px #009688;margin-top: 8px;}
+        .admin-main-header button{float: right;margin-top: -5px;}
+        .admin-danger{color: red;}
+        .slide-img{height: 30px;}
+    </style>
+</head>
+<body class="admin-main-body">
+<div class="admin-main-header">
+    <span>首页幻灯片列表</span>
+    <button class="layui-btn layui-btn-sm" onclick="add()">添加</button>
+    <div></div>
+</div>
+<table class="layui-table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>排序</th>
+        <th>标题</th>
+        <th>URL</th>
+        <th>图片</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {volist name="data.slides" id="vo"}
+    <tr>
+        <td>{$vo.id}</td>
+        <td>{$vo.sort}</td>
+        <td>{$vo.title}</td>
+        <td>{$vo.url}</td>
+        <td><img src="{$vo.img}" class="slide-img"></td>
+        <td >
+            <button class="layui-btn layui-btn-xs" onclick="add({$vo['id']})">编辑</button>
+            <button class="layui-btn layui-btn-xs layui-btn-danger" onclick="del({$vo.id})">删除</button>
+        </td>
+    </tr>
+    {/volist}
+    </tbody>
+</table>
+<script type="text/javascript">
+    layui.use(['layer'], function(){
+        layer = layui.layer;
+        $ = layui.jquery;
+    });
+    //添加和编辑操作
+    function add(id)
+    {
+        layer.open({
+            type: 2,
+            title: id > 0 ? '编辑幻灯片' : '添加幻灯片',
+            shade: 0.3,
+            area: ['400px', '370px'],
+            content: '/admin/slide/add?id=' + id +'&type=' + {$data['type']},
+        });
+    }
+    //删除操作
+    function del(id)
+    {
+        layer.confirm('您确定要删除吗？', {
+            btn: ['确定','取消']
+        }, function(){
+            $.post('/admin/slide/del', {'id':id}, function(res){
+                if (res.code > 0)
+                {
+                    layer.alert(res.message,{icon:2});
+                    return;
+                }
+                layer.msg(res.message, {icon:1});
+                setTimeout(function(){window.location.reload();}, 1000);
+            }, 'json')
+        });
+    }
+</script>
+</body>
+</html>
