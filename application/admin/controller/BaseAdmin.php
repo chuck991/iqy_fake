@@ -20,10 +20,9 @@ class BaseAdmin extends Controller
         }
         $this->db = new Sysdb();
         //获取网站配置信息
-        $site = $this->db->table('sites')->where(array('names'=>'site'))->item();
-        $site && $site['values'] = json_decode($site['values']);
+        $sites = $this->db->table('sites')->cates('names');
         $this->assign('admin',$this->_admin);
-        $this->assign('site',$site);
+        $this->assign('sites',$sites);
     }
 
     //获得菜单树
