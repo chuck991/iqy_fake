@@ -2234,7 +2234,7 @@
                 <div class="qy-focus-side-panel">
                     <div class="focus-side-inner">
                         <ul id="txtlist" class="focus-side-list">
-                            {volist name='data.tops' id='top'}
+                            {volist name='data.tops' id='top' offset='0' length='10'}
                             <li class="focus-side-item {$i == 1 ? 'selected' : ''}">
                                 <a title="{$top.title}" rseat="{$i}" href="{$top.url}" class="focus-side-itemLink">{$top.title}：{$top.desc}</a>
                             </li>
@@ -2248,7 +2248,7 @@
                     <div class="qy-nav-inner qy-nav-1336">
                         <div class="qy-nav-wrap">
                             <div id="nav_sec_K1" class="nav-item nav-item-0">
-                                {volist name='data.labels' id='cvo'}
+                                {volist name='data.labels' id='cvo' offset='0' length='10'}
                                 {if condition="$i % 2 eq 1"}
                                 <div class="nav-list">
                                     <div class="nav-list-item"><a target="_blank" rseat="712211_channel_yule"
@@ -2766,7 +2766,7 @@
                         <div id="block-FA" class="col-right" data-asyn-pb="true">
                             <div class="qy-mod-list mb">
                                 <ul class="qy-mod-ul">
-                                    {volist name="data.today_hots" id="hot" }
+                                    {volist name="data.today_hots.lists" id="hot" }
                                     <li class="qy-mod-li">
                                         <div class="qy-mod-img horizon">
                                             <div class="qy-mod-link-wrap"><a
@@ -3312,169 +3312,6 @@
                                        title="剧情升级版：王嘉尔强行压鹿晗腿">剧情升级版：王嘉尔强行压鹿晗腿</a> <a
                             href="//www.iqiyi.com/v_19rrbfem78.html" title="总决赛：妈妈打call！蔡徐坤泪目">总决赛：妈妈打call！蔡徐坤泪目</a> <a
                             href="//www.iqiyi.com/v_19rrcce5oc.html?list=19rrlnetn6" title="成长回顾：陈立农故事因你而展开">成长回顾：陈立农故事因你而展开</a>
-                </div>
-                <div id="block-AP" class="qy-mod-wrap mod-horizon-one sub" data-asyn-pb="true">
-                    <div class="qy-mod-header">
-                        <h2 id="title" class="qy-mod-title"><a title="自制综艺" class="link-txt"
-                                                               href="http://www.iqiyi.com/a_19rrhcqtot.html"
-                                                               target="_blank" rseat="712211_zizhizongyi_more"><!---->
-                            <span class="qy-mod-text">自制综艺</span> <span class="more">热血街舞团&gt;</span></a>
-                            <div class="qy-mod-nav-link">
-                                <ul id="subLinks" class="qy-mod-crumb">
-                                    <li class="crumb-li">
-                                        <div class="crumb-link"><!----> <a rseat="712211_zizhizongyi_tag1"
-                                                                           target="_blank" title="偶像练习生"
-                                                                           href="//www.iqiyi.com/a_19rrh1ji0t.html"
-                                                                           class="txt-link">偶像练习生</a></div>
-                                    </li>
-                                    <li class="crumb-li">
-                                        <div class="crumb-link"><i class="slash">/</i> <a
-                                                rseat="712211_zizhizongyi_tag2" target="_blank" title="机器人争霸"
-                                                href="//www.iqiyi.com/a_19rrhcqjq5.html" class="txt-link">机器人争霸</a>
-                                        </div>
-                                    </li> <!----></ul>
-                            </div>
-                        </h2>
-                    </div>
-                    <div class="qy-mod-list">
-                        <ul id="" class="qy-mod-ul">
-                            <li class="qy-mod-li">
-                                <div class="qy-mod-img horizon">
-                                    <div class="qy-mod-link-wrap"><a title="第11期：宠物殡葬！暖心故事红眼眶" class="qy-mod-link"
-                                                                     href="//www.iqiyi.com/v_19rrcwoqis.html"
-                                                                     target="_blank"><img alt="第11期：宠物殡葬！暖心故事红眼眶"
-                                                                                          src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_220_124.png"
-                                                                                          rseat="712211_zizhizongyi_image1"
-                                                                                          class="qy-mod-cover">
-                                        <div class="icon-tr"><i class="qy-video-icon"></i></div> <!----></a></div>
-                                    <div class="title-wrap multi"><p class="main"><!----> <a
-                                            rseat="712211_zizhizongyi_title1" title="第11期：宠物殡葬！暖心故事红眼眶" class="link-txt"
-                                            href="//www.iqiyi.com/v_19rrcwoqis.html" target="_blank"><span
-                                            class="text-em">奇葩大会2 · </span>
-                                        第11期：宠物殡葬！暖心故事红眼眶
-                                    </a></p> <!----> <!----> <!----></div>
-                                </div>
-                            </li>
-                            <li class="qy-mod-li">
-                                <div class="qy-mod-img horizon">
-                                    <div class="qy-mod-link-wrap"><a title="第5期：新晋MVP林更新惨遭baby秒杀" class="qy-mod-link"
-                                                                     href="//www.iqiyi.com/v_19rrcuo3xw.html"
-                                                                     target="_blank"><img alt="第5期：新晋MVP林更新惨遭baby秒杀"
-                                                                                          src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_220_124.png"
-                                                                                          rseat="712211_zizhizongyi_image2"
-                                                                                          class="qy-mod-cover">
-                                        <div class="icon-tr"><i class="qy-video-icon"></i></div> <!----></a></div>
-                                    <div class="title-wrap multi"><p class="main"><!----> <a
-                                            rseat="712211_zizhizongyi_title2" title="第5期：新晋MVP林更新惨遭baby秒杀"
-                                            class="link-txt" href="//www.iqiyi.com/v_19rrcuo3xw.html"
-                                            target="_blank"><span class="text-em">机器人争霸 · </span>
-                                        第5期：新晋MVP林更新惨遭baby秒杀
-                                    </a></p> <!----> <!----> <!----></div>
-                                </div>
-                            </li>
-                            <li class="qy-mod-li">
-                                <div class="qy-mod-img horizon">
-                                    <div class="qy-mod-link-wrap"><a title="粉丝独享版:猜拳选机器盛一伦晃晕林更新" class="qy-mod-link"
-                                                                     href="//www.iqiyi.com/v_19rrd0q1jc.html?list=19rrlo3qiy"
-                                                                     target="_blank"><img alt="粉丝独享版:猜拳选机器盛一伦晃晕林更新"
-                                                                                          src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_220_124.png"
-                                                                                          rseat="712211_zizhizongyi_image3"
-                                                                                          class="qy-mod-cover">
-                                        <div class="icon-tr"><i class="qy-video-icon"></i></div> <!----></a></div>
-                                    <div class="title-wrap multi"><p class="main"><!----> <a
-                                            rseat="712211_zizhizongyi_title3" title="粉丝独享版:猜拳选机器盛一伦晃晕林更新"
-                                            class="link-txt" href="//www.iqiyi.com/v_19rrd0q1jc.html?list=19rrlo3qiy"
-                                            target="_blank"><span class="text-em">机器人争霸 · </span>
-                                        粉丝独享版:猜拳选机器盛一伦晃晕林更新
-                                    </a></p> <!----> <!----> <!----></div>
-                                </div>
-                            </li>
-                            <li class="qy-mod-li">
-                                <div class="qy-mod-img horizon">
-                                    <div class="qy-mod-link-wrap"><a title="第7期：王嘉尔队伍落败自扇耳光落泪" class="qy-mod-link"
-                                                                     href="//www.iqiyi.com/v_19rrd0fqjw.html"
-                                                                     target="_blank"><img alt="第7期：王嘉尔队伍落败自扇耳光落泪"
-                                                                                          src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_220_124.png"
-                                                                                          rseat="712211_zizhizongyi_image4"
-                                                                                          class="qy-mod-cover">
-                                        <div class="icon-tr"><i class="qy-video-icon"></i></div> <!----></a></div>
-                                    <div class="title-wrap multi"><p class="main"><!----> <a
-                                            rseat="712211_zizhizongyi_title4" title="第7期：王嘉尔队伍落败自扇耳光落泪" class="link-txt"
-                                            href="//www.iqiyi.com/v_19rrd0fqjw.html" target="_blank"><span
-                                            class="text-em">热血街舞团 · </span>
-                                        第7期：王嘉尔队伍落败自扇耳光落泪
-                                    </a></p> <!----> <!----> <!----></div>
-                                </div>
-                            </li>
-                            <li class="qy-mod-li">
-                                <div class="qy-mod-img horizon">
-                                    <div class="qy-mod-link-wrap"><a title="吴亦凡正式加盟 引领说唱正能量" class="qy-mod-link"
-                                                                     href="//www.iqiyi.com/v_19rrc6cq9o.html?list=19rrlw4ihy"
-                                                                     target="_blank"><img alt="吴亦凡正式加盟 引领说唱正能量"
-                                                                                          src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_220_124.png"
-                                                                                          rseat="712211_zizhizongyi_image5"
-                                                                                          class="qy-mod-cover">
-                                        <div class="icon-tr"><i class="qy-video-icon"></i></div> <!----></a></div>
-                                    <div class="title-wrap multi"><p class="main"><!----> <a
-                                            rseat="712211_zizhizongyi_title5" title="吴亦凡正式加盟 引领说唱正能量" class="link-txt"
-                                            href="//www.iqiyi.com/v_19rrc6cq9o.html?list=19rrlw4ihy"
-                                            target="_blank"><span class="text-em">中国新说唱 · </span>
-                                        吴亦凡正式加盟 引领说唱正能量
-                                    </a></p> <!----> <!----> <!----></div>
-                                </div>
-                            </li>
-                            <li class="qy-mod-li">
-                                <div class="qy-mod-img horizon">
-                                    <div class="qy-mod-link-wrap"><a title="剧情升级版：王嘉尔强行压鹿晗腿" class="qy-mod-link"
-                                                                     href="//www.iqiyi.com/v_19rrd06k3s.html"
-                                                                     target="_blank"><img alt="剧情升级版：王嘉尔强行压鹿晗腿"
-                                                                                          src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_220_124.png"
-                                                                                          rseat="712211_zizhizongyi_image6"
-                                                                                          class="qy-mod-cover">
-                                        <div class="icon-tr"><i class="qy-video-icon"></i></div> <!----></a></div>
-                                    <div class="title-wrap multi"><p class="main"><!----> <a
-                                            rseat="712211_zizhizongyi_title6" title="剧情升级版：王嘉尔强行压鹿晗腿" class="link-txt"
-                                            href="//www.iqiyi.com/v_19rrd06k3s.html" target="_blank"><span
-                                            class="text-em">热血街舞团 · </span>
-                                        剧情升级版：王嘉尔强行压鹿晗腿
-                                    </a></p> <!----> <!----> <!----></div>
-                                </div>
-                            </li>
-                            <li class="qy-mod-li">
-                                <div class="qy-mod-img horizon">
-                                    <div class="qy-mod-link-wrap"><a title="总决赛：妈妈打call！蔡徐坤泪目" class="qy-mod-link"
-                                                                     href="//www.iqiyi.com/v_19rrbfem78.html"
-                                                                     target="_blank"><img alt="总决赛：妈妈打call！蔡徐坤泪目"
-                                                                                          src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_220_124.png"
-                                                                                          rseat="712211_zizhizongyi_image7"
-                                                                                          class="qy-mod-cover">
-                                        <div class="icon-tr"><i class="qy-video-icon"></i></div> <!----></a></div>
-                                    <div class="title-wrap multi"><p class="main"><!----> <a
-                                            rseat="712211_zizhizongyi_title7" title="总决赛：妈妈打call！蔡徐坤泪目" class="link-txt"
-                                            href="//www.iqiyi.com/v_19rrbfem78.html" target="_blank"><span
-                                            class="text-em">偶像练习生 · </span>
-                                        总决赛：妈妈打call！蔡徐坤泪目
-                                    </a></p> <!----> <!----> <!----></div>
-                                </div>
-                            </li>
-                            <li class="qy-mod-li">
-                                <div class="qy-mod-img horizon">
-                                    <div class="qy-mod-link-wrap"><a title="成长回顾：陈立农故事因你而展开" class="qy-mod-link"
-                                                                     href="//www.iqiyi.com/v_19rrcce5oc.html?list=19rrlnetn6"
-                                                                     target="_blank"><img alt="成长回顾：陈立农故事因你而展开"
-                                                                                          src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_220_124.png"
-                                                                                          rseat="712211_zizhizongyi_image8"
-                                                                                          class="qy-mod-cover">
-                                        <div class="icon-tr"><i class="qy-video-icon"></i></div> <!----></a></div>
-                                    <div class="title-wrap multi"><p class="main"><!----> <a
-                                            rseat="712211_zizhizongyi_title8" title="成长回顾：陈立农故事因你而展开" class="link-txt"
-                                            href="//www.iqiyi.com/v_19rrcce5oc.html?list=19rrlnetn6"
-                                            target="_blank"><span class="text-em">百分九少年 · </span>
-                                        成长回顾：陈立农故事因你而展开
-                                    </a></p> <!----> <!----> <!----></div>
-                                </div>
-                            </li>
-                        </ul> <!----></div>
                 </div>
                 <div class="dn"><a href="//www.iqiyi.com/v_19rrclrpaw.html" title="笑霸来了">笑霸来了</a> <a
                         href="//www.iqiyi.com/v_19rrcruwzk.html" title="梁知">梁知</a> <a
@@ -4035,67 +3872,6 @@
                     <div class="qy-mod-list">
                         <ul id="" class="qy-mod-ul"></ul> <!----></div>
                 </div>
-                <div id="1000000000718" class="qy-mod-ad" style="opacity: 1;">
-                    <div class="theatre-label">推广广告</div>
-                    <div class="theatre-container" style="">
-                        <div class="theatre-arrow-left theatre-arrow"></div>
-                        <div class="theatre-carousel-wrapper" style="width: 920px;">
-                            <div class="theatre-carousel-box"><a
-                                    href="http://t.cr-nielsen.com/hat?_t=r&amp;type=clk&amp;hat_id=ODEwMDU2MjEmMzIxOTcxNDIm4qA&amp;_l=aHR0cDovL3d3dy5pcWl5aS5jb20vbWFya2V0aW5nL2FsZmFyb21lby5odG1s&amp;_z=m&amp;rnd=66348463"
-                                    target="_blank" class="theatre-item" rel="external nofollow">
-                                <div class="theatre-expand">
-                                    <div class="theatre-left"><img
-                                            src="http://pic1.qiyipic.com/common/20180420/8139f15e78e14559bfeebf6673aa32a3.jpg"
-                                            class="theatre-poster"></div>
-                                    <div class="theatre-right"><img
-                                            src="http://pic1.qiyipic.com/common/20180420/e4a45aa2c59044b7b43309cb760cd023.jpg"
-                                            class="theatre-banner"></div>
-                                </div>
-                            </a><a href="http://t.cr-nielsen.com/hat?_t=r&amp;type=clk&amp;hat_id=ODEwMDE2MTQmMzIxNTM4MTMmj3E&amp;_l=aHR0cDovL3d3dy5pcWl5aS5jb20vYV8xOXJyaGNxdG90Lmh0bWw=&amp;_z=m&amp;rnd=56160438"
-                                   target="_blank" class="theatre-item" rel="external nofollow">
-                                <div class="theatre-expand">
-                                    <div class="theatre-left"><img
-                                            src="http://pic1.qiyipic.com/common/20180316/457b3f133bee4e30b74806084ab0fa2a.jpg"
-                                            class="theatre-poster"></div>
-                                    <div class="theatre-right"><img
-                                            src="http://pic3.qiyipic.com/common/20180316/b77181a4116e4ce491da882a463c1ce3.jpg"
-                                            class="theatre-banner"></div>
-                                </div>
-                            </a><a href="http://www.iqiyi.com/a_19rrgued6t.html" target="_blank" class="theatre-item"
-                                   rel="external nofollow">
-                                <div class="theatre-expand">
-                                    <div class="theatre-left"><img
-                                            src="http://pic3.qiyipic.com/common/20180130/2bafa7bab51f4551bf703074446fe18c.jpg"
-                                            class="theatre-poster"></div>
-                                    <div class="theatre-right"><img
-                                            src="http://pic1.qiyipic.com/common/20180130/0cdf92c29919493f8c817607f1203f6d.jpg"
-                                            class="theatre-banner"></div>
-                                </div>
-                            </a><a href="http://t.cr-nielsen.com/hat?_t=r&amp;type=clk&amp;hat_id=ODEwMDU2MjEmMzIxNDkwOTcmt5w&amp;_l=aHR0cDovL3d3dy5pcWl5aS5jb20vYV8xOXJyaDBlbTUxLmh0bWw=&amp;_z=m&amp;rnd=59435465"
-                                   target="_blank" class="theatre-item" rel="external nofollow">
-                                <div class="theatre-expand">
-                                    <div class="theatre-left"><img
-                                            src="http://pic1.qiyipic.com/common/20180307/88086da430da48d4936adb040405061a.jpg"
-                                            class="theatre-poster"></div>
-                                    <div class="theatre-right"><img
-                                            src="http://pic2.qiyipic.com/common/20180307/18fa9504cfd644598b48d7f66cf3ac94.jpg"
-                                            class="theatre-banner"></div>
-                                </div>
-                            </a><a href="http://t.cr-nielsen.com/hat?_t=r&amp;type=clk&amp;hat_id=ODEwMDE2OTMmMzIxNjQyMTcmjAU&amp;_l=aHR0cDovL3d3dy5pcWl5aS5jb20va3N6dC9zbWFydHRyaXAuaHRtbA==&amp;_z=m&amp;rnd=20829527"
-                                   target="_blank" class="theatre-item" rel="external nofollow">
-                                <div class="theatre-expand">
-                                    <div class="theatre-left"><img
-                                            src="http://pic2.qiyipic.com/common/20180403/cb5abdabbe85494e955aed6b58d678b8.jpg"
-                                            class="theatre-poster"></div>
-                                    <div class="theatre-right"><img
-                                            src="http://pic1.qiyipic.com/common/20180403/1b9fabf7391643e49c7d4f1ca9faccc5.jpg"
-                                            class="theatre-banner"></div>
-                                </div>
-                            </a></div>
-                        </div>
-                        <div class="theatre-arrow-right theatre-arrow"></div>
-                    </div>
-                </div>
                 <div id="block-L" class="qy-mod-wrap-side mod-vertical-two" data-asyn-pb="true">
                     <div class="mod-left">
                         <div class="right-col-1">
@@ -4143,288 +3919,51 @@
                             </div>
                             <div class="qy-mod-list mb" id="picList1">
                                 <ul id="" class="qy-mod-ul">
+                                    {volist name="data.movies_new.lists" id='mnew' offset='0' length='5'}
                                     <li class="qy-mod-li">
                                         <div class="qy-mod-img vertical">
-                                            <div class="qy-mod-link-wrap"><a title="红海行动" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rr7plwdc.html"
-                                                                             target="_blank"><img alt="红海行动"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_260_360.png"
+                                            <div class="qy-mod-link-wrap"><a title="{$mnew.title}" class="qy-mod-link"
+                                                                             href="/index/index/video?vid={$mnew.id}"
+                                                                             target="_blank"><img alt="{$mnew.title}"
+                                                                                                  src="{$mnew.img}"
                                                                                                   rseat="712211_dianying_image1"
                                                                                                   class="qy-mod-cover">
-                                                <div class="icon-tr"><img alt="红海行动"
+                                                <div class="icon-tr"><img alt="{$mnew.title}"
                                                                           src="//pic0.qiyipic.com/common/20171106/ac/1b/vip_100000_v_601_0_27.png">
                                                 </div> <!----></a></div>
-                                            <div class="title-wrap"><p class="main"><span class="text-score">8.9</span>
-                                                <a rseat="712211_dianying_title1" title="红海行动" class="link-txt"
-                                                   href="//www.iqiyi.com/v_19rr7plwdc.html" target="_blank"><!---->
-                                                    红海行动
-                                                </a></p> <!----> <p title="特种部队跨境救援" class="sub">
-                                                特种部队跨境救援</p> <!----></div>
+                                            <div class="title-wrap"><p class="main"><span class="text-score">{$mnew.score}</span>
+                                                <a rseat="712211_dianying_title1" title="{$mnew.title}" class="link-txt"
+                                                   href="/index/index/video?vid={$mnew.id}" target="_blank"><!---->
+                                                    {$mnew.title}
+                                                </a></p> <!----> <p title="{$mnew.desc}" class="sub">
+                                                {$mnew.desc}</p> <!----></div>
                                         </div>
                                     </li>
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img vertical">
-                                            <div class="qy-mod-link-wrap"><a title="花滑女王" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rrbq6sl4.html"
-                                                                             target="_blank"><img alt="花滑女王"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_260_360.png"
-                                                                                                  rseat="712211_dianying_image2"
-                                                                                                  class="qy-mod-cover">
-                                                <div class="icon-tr"><img alt="花滑女王"
-                                                                          src="//pic0.qiyipic.com/common/20171106/ac/1b/vip_100000_v_601_0_27.png">
-                                                </div> <!----></a></div>
-                                            <div class="title-wrap"><p class="main"><span class="text-score">7.1</span>
-                                                <a rseat="712211_dianying_title2" title="花滑女王" class="link-txt"
-                                                   href="//www.iqiyi.com/v_19rrbq6sl4.html" target="_blank"><!---->
-                                                    花滑女王
-                                                </a></p> <!----> <p title="平凡少女燃情追梦" class="sub">
-                                                平凡少女燃情追梦</p> <!----></div>
-                                        </div>
-                                    </li>
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img vertical">
-                                            <div class="qy-mod-link-wrap"><a title="我说的都是真的" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rr7p3z68.html"
-                                                                             target="_blank"><img alt="我说的都是真的"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_260_360.png"
-                                                                                                  rseat="712211_dianying_image3"
-                                                                                                  class="qy-mod-cover">
-                                                <div class="icon-tr"><img alt="我说的都是真的"
-                                                                          src="//pic0.qiyipic.com/common/20171106/ac/1b/vip_100000_v_601_0_27.png">
-                                                </div> <!----></a></div>
-                                            <div class="title-wrap"><p class="main"><span class="text-score">6.8</span>
-                                                <a rseat="712211_dianying_title3" title="我说的都是真的" class="link-txt"
-                                                   href="//www.iqiyi.com/v_19rr7p3z68.html" target="_blank"><!---->
-                                                    我说的都是真的
-                                                </a></p> <!----> <p title="小沈阳花式被虐" class="sub">
-                                                小沈阳花式被虐</p> <!----></div>
-                                        </div>
-                                    </li>
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img vertical">
-                                            <div class="qy-mod-link-wrap"><a title="唐人街探案2" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rr839kro.html"
-                                                                             target="_blank"><img alt="唐人街探案2"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_260_360.png"
-                                                                                                  rseat="712211_dianying_image4"
-                                                                                                  class="qy-mod-cover"
-                                                                                                  style="display: none;">
-                                                <div class="icon-tr"><img alt="唐人街探案2"
-                                                                          src="//pic0.qiyipic.com/common/20171106/ac/1b/vip_100000_v_601_0_27.png">
-                                                </div> <!----></a></div>
-                                            <div class="title-wrap"><p class="main"><span class="text-score">8.9</span>
-                                                <a rseat="712211_dianying_title4" title="唐人街探案2" class="link-txt"
-                                                   href="//www.iqiyi.com/v_19rr839kro.html" target="_blank"><!---->
-                                                    唐人街探案2
-                                                </a></p> <!----> <p title="王宝强爆笑破案" class="sub">
-                                                王宝强爆笑破案</p> <!----></div>
-                                        </div>
-                                    </li>
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img vertical">
-                                            <div class="qy-mod-link-wrap"><a title="萌犬好声音2" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rrfptf8g.html"
-                                                                             target="_blank"><img alt="萌犬好声音2"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_260_360.png"
-                                                                                                  rseat="712211_dianying_image5"
-                                                                                                  class="qy-mod-cover">
-                                                <div class="icon-tr"><img alt="萌犬好声音2"
-                                                                          src="//pic0.qiyipic.com/common/20171106/ac/1b/vip_100000_v_601_0_27.png">
-                                                </div> <!----></a></div>
-                                            <div class="title-wrap"><p class="main"><span class="text-score">7.1</span>
-                                                <a rseat="712211_dianying_title5" title="萌犬好声音2" class="link-txt"
-                                                   href="//www.iqiyi.com/v_19rrfptf8g.html" target="_blank"><!---->
-                                                    萌犬好声音2
-                                                </a></p> <!----> <p title="歌神归来冒险升级" class="sub">
-                                                歌神归来冒险升级</p> <!----></div>
-                                        </div>
-                                    </li>
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img vertical">
-                                            <div class="qy-mod-link-wrap"><a title="莫斯科陷落" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rr7pggmg.html"
-                                                                             target="_blank"><img alt="莫斯科陷落"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_260_360.png"
-                                                                                                  rseat="712211_dianying_image6"
-                                                                                                  class="qy-mod-cover">
-                                                <div class="icon-tr"><img alt="莫斯科陷落"
-                                                                          src="//pic0.qiyipic.com/common/20171106/ac/1b/vip_100000_v_601_0_27.png">
-                                                </div> <!----></a></div>
-                                            <div class="title-wrap"><p class="main"><span class="text-score">5.6</span>
-                                                <a rseat="712211_dianying_title6" title="莫斯科陷落" class="link-txt"
-                                                   href="//www.iqiyi.com/v_19rr7pggmg.html" target="_blank"><!---->
-                                                    莫斯科陷落
-                                                </a></p> <!----> <p title="战斗民族大战外星人" class="sub">
-                                                战斗民族大战外星人</p> <!----></div>
-                                        </div>
-                                    </li>
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img vertical">
-                                            <div class="qy-mod-link-wrap"><a title="捉妖记2" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rr7pge9c.html"
-                                                                             target="_blank"><img alt="捉妖记2"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_260_360.png"
-                                                                                                  rseat="712211_dianying_image7"
-                                                                                                  class="qy-mod-cover">
-                                                <div class="icon-tr"><img alt="捉妖记2"
-                                                                          src="//pic0.qiyipic.com/common/20171106/ac/1b/vip_100000_v_601_0_27.png">
-                                                </div> <!----></a></div>
-                                            <div class="title-wrap"><p class="main"><span class="text-score">8.1</span>
-                                                <a rseat="712211_dianying_title7" title="捉妖记2" class="link-txt"
-                                                   href="//www.iqiyi.com/v_19rr7pge9c.html" target="_blank"><!---->
-                                                    捉妖记2
-                                                </a></p> <!----> <p title="天师团激战巨妖" class="sub">
-                                                天师团激战巨妖</p> <!----></div>
-                                        </div>
-                                    </li>
+                                    {/volist}
                                 </ul> <!----></div>
                             <div class="qy-mod-list" id="picList2">
                                 <ul id="" class="qy-mod-ul">
+                                    {volist name="data.movies_new.lists" id='mnew2' offset='5' length='5'}
                                     <li class="qy-mod-li">
                                         <div class="qy-mod-img vertical">
-                                            <div class="qy-mod-link-wrap"><a title="西游记女儿国" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rr7p5oh8.html"
-                                                                             target="_blank"><img alt="西游记女儿国"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_260_360.png"
+                                            <div class="qy-mod-link-wrap"><a title="{$mnew2.title}" class="qy-mod-link"
+                                                                             href="/index/index/video?vid={$mnew2.id}"
+                                                                             target="_blank"><img alt="{$mnew2.title}"
+                                                                                                  src="{$mnew2.img}"
                                                                                                   rseat="712211_dianying_image8"
                                                                                                   class="qy-mod-cover">
-                                                <div class="icon-tr"><img alt="西游记女儿国"
+                                                <div class="icon-tr"><img alt="{$mnew2.title}"
                                                                           src="//pic0.qiyipic.com/common/20171106/ac/1b/vip_100000_v_601_0_27.png">
                                                 </div> <!----></a></div>
-                                            <div class="title-wrap"><p class="main"><span class="text-score">7.9</span>
-                                                <a rseat="712211_dianying_title8" title="西游记女儿国" class="link-txt"
-                                                   href="//www.iqiyi.com/v_19rr7p5oh8.html" target="_blank"><!---->
-                                                    西游记女儿国
-                                                </a></p> <!----> <p title="取经天团战河神" class="sub">
-                                                取经天团战河神</p> <!----></div>
+                                            <div class="title-wrap"><p class="main"><span class="text-score">{$mnew.score}</span>
+                                                <a rseat="712211_dianying_title8" title="{$mnew2.title}" class="link-txt"
+                                                   href="/index/index/video?vid={$mnew2.id}" target="_blank"><!---->
+                                                    {$mnew2.title}
+                                                </a></p> <!----> <p title="{$mnew2.desc}" class="sub">
+                                                {$mnew2.desc}</p> <!----></div>
                                         </div>
                                     </li>
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img vertical">
-                                            <div class="qy-mod-link-wrap"><a title="幕后玩家" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rrcxiltg.html"
-                                                                             target="_blank"><img alt="幕后玩家"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_260_360.png"
-                                                                                                  rseat="712211_dianying_image9"
-                                                                                                  class="qy-mod-cover">
-                                                <div class="icon-tr"><i class="qy-video-icon qy-video-self"></i></div>
-                                                <!----></a></div>
-                                            <div class="title-wrap"><p class="main"><span class="text-score">7.0</span>
-                                                <a rseat="712211_dianying_title9" title="幕后玩家" class="link-txt"
-                                                   href="//www.iqiyi.com/v_19rrcxiltg.html" target="_blank"><!---->
-                                                    幕后玩家
-                                                </a></p> <!----> <p title="徐峥大玩金钱游戏" class="sub">
-                                                徐峥大玩金钱游戏</p> <!----></div>
-                                        </div>
-                                    </li>
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img vertical">
-                                            <div class="qy-mod-link-wrap"><a title="末日重启" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rr7plfzs.html"
-                                                                             target="_blank"><img alt="末日重启"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_260_360.png"
-                                                                                                  rseat="712211_dianying_image10"
-                                                                                                  class="qy-mod-cover">
-                                                <div class="icon-tr"><i class="qy-video-icon qy-video-1080"></i></div>
-                                                <!----></a></div>
-                                            <div class="title-wrap"><p class="main"><span class="text-score">5.1</span>
-                                                <a rseat="712211_dianying_title10" title="末日重启" class="link-txt"
-                                                   href="//www.iqiyi.com/v_19rr7plfzs.html" target="_blank"><!---->
-                                                    末日重启
-                                                </a></p> <!----> <p title="大表哥陷平行宇宙" class="sub">
-                                                大表哥陷平行宇宙</p> <!----></div>
-                                        </div>
-                                    </li>
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img vertical">
-                                            <div class="qy-mod-link-wrap"><a title="双面劫匪" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rrfkncds.html"
-                                                                             target="_blank"><img alt="双面劫匪"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_260_360.png"
-                                                                                                  rseat="712211_dianying_image11"
-                                                                                                  class="qy-mod-cover">
-                                                <div class="icon-tr"><i class="qy-video-icon qy-video-1080"></i></div>
-                                                <!----></a></div>
-                                            <div class="title-wrap"><p class="main"><span class="text-score">8.1</span>
-                                                <a rseat="712211_dianying_title11" title="双面劫匪" class="link-txt"
-                                                   href="//www.iqiyi.com/v_19rrfkncds.html" target="_blank"><!---->
-                                                    双面劫匪
-                                                </a></p> <!----> <p title="巴士炼狱劫案惊天" class="sub">
-                                                巴士炼狱劫案惊天</p> <!----></div>
-                                        </div>
-                                    </li>
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img vertical">
-                                            <div class="qy-mod-link-wrap"><a title="杀破狼·贪狼" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rr7mmyvw.html"
-                                                                             target="_blank"><img alt="杀破狼·贪狼"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_260_360.png"
-                                                                                                  rseat="712211_dianying_image12"
-                                                                                                  class="qy-mod-cover">
-                                                <div class="icon-tr"><i class="qy-video-icon qy-video-1080"></i></div>
-                                                <!----></a></div>
-                                            <div class="title-wrap"><p class="main"><span class="text-score">8.9</span>
-                                                <a rseat="712211_dianying_title12" title="杀破狼·贪狼" class="link-txt"
-                                                   href="//www.iqiyi.com/v_19rr7mmyvw.html" target="_blank"><!---->
-                                                    杀破狼·贪狼
-                                                </a></p> <!----> <p title="古天乐跨国寻女" class="sub">
-                                                古天乐跨国寻女</p> <!----></div>
-                                        </div>
-                                    </li>
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img vertical">
-                                            <div class="qy-mod-link-wrap"><a title="龙之战" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rr7pla5c.html"
-                                                                             target="_blank"><img alt="龙之战"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_260_360.png"
-                                                                                                  rseat="712211_dianying_image13"
-                                                                                                  class="qy-mod-cover">
-                                                <div class="icon-tr"><i class="qy-video-icon qy-video-1080"></i></div>
-                                                <!----></a></div>
-                                            <div class="title-wrap"><p class="main"><span class="text-score">8.4</span>
-                                                <a rseat="712211_dianying_title13" title="龙之战" class="link-txt"
-                                                   href="//www.iqiyi.com/v_19rr7pla5c.html" target="_blank"><!---->
-                                                    龙之战
-                                                </a></p> <!----> <p title="老将血战镇南关" class="sub">
-                                                老将血战镇南关</p> <!----></div>
-                                        </div>
-                                    </li>
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img vertical">
-                                            <div class="qy-mod-link-wrap"><a title="心理罪" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rr7pa6xw.html"
-                                                                             target="_blank"><img alt="心理罪"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_260_360.png"
-                                                                                                  rseat="712211_dianying_image14"
-                                                                                                  class="qy-mod-cover">
-                                                <div class="icon-tr"><i class="qy-video-icon qy-video-1080"></i></div>
-                                                <!----></a></div>
-                                            <div class="title-wrap"><p class="main"><span class="text-score">8.3</span>
-                                                <a rseat="712211_dianying_title14" title="心理罪" class="link-txt"
-                                                   href="//www.iqiyi.com/v_19rr7pa6xw.html" target="_blank"><!---->
-                                                    心理罪
-                                                </a></p> <!----> <p title="廖凡李易峰破悬案" class="sub">
-                                                廖凡李易峰破悬案</p> <!----></div>
-                                        </div>
-                                    </li>
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img vertical">
-                                            <div class="qy-mod-link-wrap"><a title="破·局" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rr8my51c.html"
-                                                                             target="_blank"><img alt="破·局"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_260_360.png"
-                                                                                                  rseat="712211_dianying_image15"
-                                                                                                  class="qy-mod-cover">
-                                                <div class="icon-tr"><i class="qy-video-icon qy-video-1080"></i></div>
-                                                <!----></a></div>
-                                            <div class="title-wrap"><p class="main"><span class="text-score">8.4</span>
-                                                <a rseat="712211_dianying_title15" title="破·局" class="link-txt"
-                                                   href="//www.iqiyi.com/v_19rr8my51c.html" target="_blank"><!---->
-                                                    破·局
-                                                </a></p> <!----> <p title="郭富城对决王千源" class="sub">
-                                                郭富城对决王千源</p> <!----></div>
-                                        </div>
-                                    </li>
+                                    {/volist}
                                 </ul> <!----></div>
                         </div>
                     </div>
@@ -4439,304 +3978,37 @@
                         </div>
                         <div class="qy-mod-rank">
                             <ul id="txtList" class="rank-list">
-                                <li class="rank-li"><i class="num no1">1</i> <a href="//www.iqiyi.com/v_19rr839kro.html"
+                                {volist name="data.movies_hot.lists" id='mhot'}
+                                <li class="rank-li"><i class="num no{$i}">{$i}</i> <a href="/index/index/video?vid={$mhot.id}"
                                                                                 target="_blank"
-                                                                                rseat="712211_dianyingbang_title1"
-                                                                                title="唐人街探案2"
-                                                                                class="txt-link">唐人街探案2</a> <!----> <i
+                                                                                rseat="712211_dianyingbang_title{$i}"
+                                                                                title="{$mhot.title}"
+                                                                                class="txt-link">{$mhot.title}</a> <!----> <i
                                         class="qy-common-icon qy-common-rankUnchg"></i> <!----></li>
-                                <li class="rank-li"><i class="num no2">2</i> <a href="//www.iqiyi.com/v_19rr7p3z68.html"
-                                                                                target="_blank"
-                                                                                rseat="712211_dianyingbang_title2"
-                                                                                title="我说的都是真的"
-                                                                                class="txt-link">我说的都是真的</a> <i
-                                        class="qy-common-icon qy-common-rankUp"></i> <!----> <!----></li>
-                                <li class="rank-li"><i class="num no3">3</i> <a href="//www.iqiyi.com/v_19rr7q6q0k.html"
-                                                                                target="_blank"
-                                                                                rseat="712211_dianyingbang_title3"
-                                                                                title="小萝莉的猴神大叔" class="txt-link">小萝莉的猴神大叔</a>
-                                    <!----> <!----> <i class="qy-common-icon qy-common-rankDown"></i></li>
-                                <li class="rank-li"><i class="num">4</i> <a href="//www.iqiyi.com/v_19rrl9vhkw.html"
-                                                                            target="_blank"
-                                                                            rseat="712211_dianyingbang_title4"
-                                                                            title="唐人街探案" class="txt-link">唐人街探案</a> <i
-                                        class="qy-common-icon qy-common-rankUp"></i> <!----> <!----></li>
-                                <li class="rank-li"><i class="num">5</i> <a href="//www.iqiyi.com/v_19rr7pggmg.html"
-                                                                            target="_blank"
-                                                                            rseat="712211_dianyingbang_title5"
-                                                                            title="莫斯科陷落" class="txt-link">莫斯科陷落</a>
-                                    <!----> <!----> <i class="qy-common-icon qy-common-rankDown"></i></li>
-                                <li class="rank-li"><i class="num">6</i> <a href="//www.iqiyi.com/v_19rr8q64tk.html"
-                                                                            target="_blank"
-                                                                            rseat="712211_dianyingbang_title6"
-                                                                            title="我的高考我的班" class="txt-link">我的高考我的班</a>
-                                    <!----> <i class="qy-common-icon qy-common-rankUnchg"></i> <!----></li>
-                                <li class="rank-li"><i class="num">7</i> <a href="//www.iqiyi.com/v_19rr7mmyvw.html"
-                                                                            target="_blank"
-                                                                            rseat="712211_dianyingbang_title7"
-                                                                            title="杀破狼·贪狼" class="txt-link">杀破狼·贪狼</a>
-                                    <!----> <i class="qy-common-icon qy-common-rankUnchg"></i> <!----></li>
-                                <li class="rank-li"><i class="num">8</i> <a href="//www.iqiyi.com/v_19rr7h3bec.html"
-                                                                            target="_blank"
-                                                                            rseat="712211_dianyingbang_title8"
-                                                                            title="单身汪的假期" class="txt-link">单身汪的假期</a>
-                                    <!----> <i class="qy-common-icon qy-common-rankUnchg"></i> <!----></li>
-                                <li class="rank-li"><i class="num">9</i> <a href="//www.iqiyi.com/v_19rr7pge9c.html"
-                                                                            target="_blank"
-                                                                            rseat="712211_dianyingbang_title9"
-                                                                            title="捉妖记2" class="txt-link">捉妖记2</a> <i
-                                        class="qy-common-icon qy-common-rankUp"></i> <!----> <!----></li>
-                                <li class="rank-li"><i class="num">10</i> <a href="//www.iqiyi.com/v_19rrfxa8lw.html"
-                                                                             target="_blank"
-                                                                             rseat="712211_dianyingbang_title10"
-                                                                             title="特种部队2：全面反击" class="txt-link">特种部队2：全面反击</a>
-                                    <!----> <i class="qy-common-icon qy-common-rankUnchg"></i> <!----></li>
+                                {/volist}
                             </ul>
                         </div>
+
                         <div class="qy-mod-img vertical" id="picList">
-                            <div class="qy-mod-link-wrap"><a href="//www.iqiyi.com/v_19rr8my51c.html" title="破·局"
-                                                             target="_blank" class="qy-mod-link"><img alt="破·局"
-                                                                                                      src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_260_360.png"
+                            {volist name="data.movies_new.lists" id="mnew3" offset='10' length='1'}
+                            <div class="qy-mod-link-wrap"><a href="/index/index/video?vid={$mnew3.id}" title="{$mnew3.title}"
+                                                             target="_blank" class="qy-mod-link"><img alt="{$mnew3.title}"
+                                                                                                      src="{$mnew3.img}"
                                                                                                       rseat="712211_dianying_image16"
                                                                                                       class="qy-mod-cover">
                                 <div class="icon-tr"><i class="qy-video-icon qy-video-1080"></i></div> <!----> <!---->
                             </a></div>
-                            <div class="title-wrap"><p class="main"><span class="text-score">8.4</span> <a
+                            <div class="title-wrap"><p class="main"><span class="text-score">{$mnew3.score}</span> <a
                                     rseat="712211_dianying_title16" target="_blank"
-                                    href="//www.iqiyi.com/v_19rr8my51c.html" title="破·局" class="link-txt">破·局</a></p>
-                                <p title="郭富城对决王千源" class="sub">
-                                    郭富城对决王千源</p></div>
+                                    href="/index/index/video?vid={$mnew3.id}" title="{$mnew3.title}" class="link-txt">{$mnew3.title}</a></p>
+                                <p title="{$mnew3.desc}" class="sub">
+                                    {$mnew3.desc}</p></div>
+                            {/volist}
                         </div>
+
                     </div>
                 </div>
-                <div class="qy-mod-wrap-twin">
-                    <div class="dn"><a href="//www.iqiyi.com/v_19rrc37aag.html" title="恋恋仙缘">恋恋仙缘</a> <a
-                            href="//www.iqiyi.com/v_19rrcv9plw.html" title="刀山火海2">刀山火海2</a> <a
-                            href="//www.iqiyi.com/v_19rrc3cm80.html" title="鬼手传奇之寒食帖">鬼手传奇之寒食帖</a> <a
-                            href="//www.iqiyi.com/v_19rrcak500.html" title="王者进化论">王者进化论</a></div>
-                    <div id="block-M" class="mod-left" data-asyn-pb="true">
-                        <div>
-                            <div class="qy-mod-header">
-                                <h2 id="title" class="qy-mod-title"><a title="网络电影" class="link-txt"
-                                                                       href="//www.iqiyi.com/weidianying/"
-                                                                       target="_blank"
-                                                                       rseat="712211_wangluodianying_more"><!----> <span
-                                        class="qy-mod-text">网络电影</span> <span class="more">更多&gt;</span></a>
-                                    <div class="qy-mod-nav-link">
-                                        <ul id="subLinks" class="qy-mod-crumb">
-                                            <li class="crumb-li">
-                                                <div class="crumb-link"><!----> <a rseat="712211_wangluodianying_tag1"
-                                                                                   target="_blank" title="独播网大推荐"
-                                                                                   href="//www.iqiyi.com/v_19rr9ih6zc.html?list=19rrkktavq"
-                                                                                   class="txt-link">独播网大推荐</a></div>
-                                            </li>
-                                            <li class="crumb-li">
-                                                <div class="crumb-link"><i class="slash">/</i> <a
-                                                        rseat="712211_wangluodianying_tag2" target="_blank" title="我要合作"
-                                                        href="//www.iqiyi.com/dianying/fgtwqa.html" class="txt-link">我要合作</a>
-                                                </div>
-                                            </li> <!----></ul>
-                                    </div>
-                                </h2>
-                            </div>
-                            <div class="qy-mod-list">
-                                <ul id="" class="qy-mod-ul">
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img horizon">
-                                            <div class="qy-mod-link-wrap"><a title="恋恋仙缘" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rrc37aag.html"
-                                                                             target="_blank"><img alt="恋恋仙缘"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_220_124.png"
-                                                                                                  rseat="712211_wangluodianying_image1"
-                                                                                                  class="qy-mod-cover">
-                                                <div class="icon-tr"><img alt="恋恋仙缘"
-                                                                          src="//pic0.qiyipic.com/common/20171106/ac/1b/vip_100000_v_601_0_27.png">
-                                                </div> <!----></a></div>
-                                            <div class="title-wrap"><p class="main"><!----> <a
-                                                    rseat="712211_wangluodianying_title1" title="恋恋仙缘" class="link-txt"
-                                                    href="//www.iqiyi.com/v_19rrc37aag.html" target="_blank"><!---->
-                                                恋恋仙缘
-                                            </a></p> <!----> <p title="现代版天仙配挚爱千年" class="sub">
-                                                现代版天仙配挚爱千年</p> <!----></div>
-                                        </div>
-                                    </li>
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img horizon">
-                                            <div class="qy-mod-link-wrap"><a title="刀山火海2" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rrcv9plw.html"
-                                                                             target="_blank"><img alt="刀山火海2"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_220_124.png"
-                                                                                                  rseat="712211_wangluodianying_image2"
-                                                                                                  class="qy-mod-cover">
-                                                <div class="icon-tr"><img alt="刀山火海2"
-                                                                          src="//pic0.qiyipic.com/common/20171106/ac/1b/vip_100000_v_601_0_27.png">
-                                                </div> <!----></a></div>
-                                            <div class="title-wrap"><p class="main"><!----> <a
-                                                    rseat="712211_wangluodianying_title2" title="刀山火海2" class="link-txt"
-                                                    href="//www.iqiyi.com/v_19rrcv9plw.html" target="_blank"><!---->
-                                                刀山火海2
-                                            </a></p> <!----> <p title="拳王进化再战鬼煞" class="sub">
-                                                拳王进化再战鬼煞</p> <!----></div>
-                                        </div>
-                                    </li>
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img horizon">
-                                            <div class="qy-mod-link-wrap"><a title="鬼手传奇之寒食帖" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rrc3cm80.html"
-                                                                             target="_blank"><img alt="鬼手传奇之寒食帖"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_220_124.png"
-                                                                                                  rseat="712211_wangluodianying_image3"
-                                                                                                  class="qy-mod-cover">
-                                                <div class="icon-tr"><img alt="鬼手传奇之寒食帖"
-                                                                          src="//pic0.qiyipic.com/common/20171106/ac/1b/vip_100000_v_601_0_27.png">
-                                                </div> <!----></a></div>
-                                            <div class="title-wrap"><p class="main"><!----> <a
-                                                    rseat="712211_wangluodianying_title3" title="鬼手传奇之寒食帖"
-                                                    class="link-txt" href="//www.iqiyi.com/v_19rrc3cm80.html"
-                                                    target="_blank"><!---->
-                                                鬼手传奇之寒食帖
-                                            </a></p> <!----> <p title="三垣五相古玩做局" class="sub">
-                                                三垣五相古玩做局</p> <!----></div>
-                                        </div>
-                                    </li>
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img horizon">
-                                            <div class="qy-mod-link-wrap"><a title="王者进化论" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rrcak500.html"
-                                                                             target="_blank"><img alt="王者进化论"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_220_124.png"
-                                                                                                  rseat="712211_wangluodianying_image4"
-                                                                                                  class="qy-mod-cover">
-                                                <div class="icon-tr"><img alt="王者进化论"
-                                                                          src="//pic0.qiyipic.com/common/20171106/ac/1b/vip_100000_v_601_0_27.png">
-                                                </div> <!----></a></div>
-                                            <div class="title-wrap"><p class="main"><!----> <a
-                                                    rseat="712211_wangluodianying_title4" title="王者进化论" class="link-txt"
-                                                    href="//www.iqiyi.com/v_19rrcak500.html" target="_blank"><!---->
-                                                王者进化论
-                                            </a></p> <!----> <p title="小青年的电竞生活" class="sub">
-                                                小青年的电竞生活</p> <!----></div>
-                                        </div>
-                                    </li>
-                                </ul> <!----></div>
-                        </div>
-                    </div>
-                    <div class="dn"><a href="//www.iqiyi.com/v_19rrcxmxv8.html" title="《后来的我们》终极预告 4月28日直面爱情倒计时">《后来的我们》终极预告
-                        4月28日直面爱情倒计时</a> <a href="//www.iqiyi.com/v_19rrczh740.html"
-                                            title="《&amp;nbsp;狄仁杰之四大天王》先导预告 信息量大到爆表">《&nbsp;狄仁杰之四大天王》先导预告 信息量大到爆表</a> <a
-                            href="//www.iqiyi.com/v_19rrcz34k4.html" title="电影《超时空同居》发布“大脑袋与老斑鸠”预告">电影《超时空同居》发布“大脑袋与老斑鸠”预告</a>
-                        <a href="//www.iqiyi.com/v_19rrd08ezc.html" title="《毒液：致命守护者》预告全球首曝，正邪共生黑暗来袭">《毒液：致命守护者》预告全球首曝，正邪共生黑暗来袭</a>
-                    </div>
-                    <div id="block-N" class="mod-right" data-asyn-pb="true">
-                        <div>
-                            <div class="qy-mod-header">
-                                <h2 id="title" class="qy-mod-title"><a title="片花" class="link-txt"
-                                                                       href="//trailer.iqiyi.com/" target="_blank"
-                                                                       rseat="712211_pianhua_more"><!----> <span
-                                        class="qy-mod-text">片花</span> <span class="more">更多&gt;</span></a>
-                                    <div class="qy-mod-nav-link">
-                                        <ul id="subLinks" class="qy-mod-crumb">
-                                            <li class="crumb-li">
-                                                <div class="crumb-link"><!----> <a rseat="712211_pianhua_tag1"
-                                                                                   target="_blank" title="《封神传奇》独家特辑"
-                                                                                   href="//www.iqiyi.com/v_19rrmejr1g.html"
-                                                                                   class="txt-link">《封神传奇》独家特辑</a></div>
-                                            </li>
-                                            <li class="crumb-li">
-                                                <div class="crumb-link"><i class="slash">/</i> <a
-                                                        rseat="712211_pianhua_tag2" target="_blank" title="《绝地逃亡》独家特辑"
-                                                        href="//www.iqiyi.com/v_19rrm73v28.html" class="txt-link">《绝地逃亡》独家特辑</a>
-                                                </div>
-                                            </li> <!----></ul>
-                                    </div>
-                                </h2>
-                            </div>
-                            <div class="qy-mod-list">
-                                <ul id="" class="qy-mod-ul">
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img horizon">
-                                            <div class="qy-mod-link-wrap"><a title="《后来的我们》终极预告 4月28日直面爱情倒计时"
-                                                                             class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rrcxmxv8.html"
-                                                                             target="_blank"><img
-                                                    alt="《后来的我们》终极预告 4月28日直面爱情倒计时"
-                                                    src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_220_124.png"
-                                                    rseat="712211_pianhua_image1" class="qy-mod-cover">
-                                                <div class="icon-tr"><i class="qy-video-icon qy-video-1080"></i></div>
-                                                <div class="icon-br"><span class="qy-mod-label">02:04</span></div>
-                                            </a></div>
-                                            <div class="title-wrap multi"><p class="main"><!----> <a
-                                                    rseat="712211_pianhua_title1" title="《后来的我们》终极预告 4月28日直面爱情倒计时"
-                                                    class="link-txt" href="//www.iqiyi.com/v_19rrcxmxv8.html"
-                                                    target="_blank"><!---->
-                                                《后来的我们》终极预告 4月28日直面爱情倒计时
-                                            </a></p> <!----> <!----> <!----></div>
-                                        </div>
-                                    </li>
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img horizon">
-                                            <div class="qy-mod-link-wrap"><a title="《&amp;nbsp;狄仁杰之四大天王》先导预告 信息量大到爆表"
-                                                                             class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rrczh740.html"
-                                                                             target="_blank"><img
-                                                    alt="《&amp;nbsp;狄仁杰之四大天王》先导预告 信息量大到爆表"
-                                                    src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_220_124.png"
-                                                    rseat="712211_pianhua_image2" class="qy-mod-cover">
-                                                <div class="icon-tr"><i class="qy-video-icon qy-video-1080"></i></div>
-                                                <div class="icon-br"><span class="qy-mod-label">01:40</span></div>
-                                            </a></div>
-                                            <div class="title-wrap multi"><p class="main"><!----> <a
-                                                    rseat="712211_pianhua_title2"
-                                                    title="《&amp;nbsp;狄仁杰之四大天王》先导预告 信息量大到爆表" class="link-txt"
-                                                    href="//www.iqiyi.com/v_19rrczh740.html" target="_blank"><!---->
-                                                《&amp;nbsp;狄仁杰之四大天王》先导预告 信息量大到爆表
-                                            </a></p> <!----> <!----> <!----></div>
-                                        </div>
-                                    </li>
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img horizon">
-                                            <div class="qy-mod-link-wrap"><a title="电影《超时空同居》发布“大脑袋与老斑鸠”预告"
-                                                                             class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rrcz34k4.html"
-                                                                             target="_blank"><img
-                                                    alt="电影《超时空同居》发布“大脑袋与老斑鸠”预告"
-                                                    src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_220_124.png"
-                                                    rseat="712211_pianhua_image3" class="qy-mod-cover">
-                                                <div class="icon-tr"><i class="qy-video-icon qy-video-1080"></i></div>
-                                                <div class="icon-br"><span class="qy-mod-label">01:35</span></div>
-                                            </a></div>
-                                            <div class="title-wrap multi"><p class="main"><!----> <a
-                                                    rseat="712211_pianhua_title3" title="电影《超时空同居》发布“大脑袋与老斑鸠”预告"
-                                                    class="link-txt" href="//www.iqiyi.com/v_19rrcz34k4.html"
-                                                    target="_blank"><!---->
-                                                电影《超时空同居》发布“大脑袋与老斑鸠”预告
-                                            </a></p> <!----> <!----> <!----></div>
-                                        </div>
-                                    </li>
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img horizon">
-                                            <div class="qy-mod-link-wrap"><a title="《毒液：致命守护者》预告全球首曝，正邪共生黑暗来袭"
-                                                                             class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rrd08ezc.html"
-                                                                             target="_blank"><img
-                                                    alt="《毒液：致命守护者》预告全球首曝，正邪共生黑暗来袭"
-                                                    src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_220_124.png"
-                                                    rseat="712211_pianhua_image4" class="qy-mod-cover">
-                                                <div class="icon-tr"><i class="qy-video-icon qy-video-1080"></i></div>
-                                                <div class="icon-br"><span class="qy-mod-label">02:29</span></div>
-                                            </a></div>
-                                            <div class="title-wrap multi"><p class="main"><!----> <a
-                                                    rseat="712211_pianhua_title4" title="《毒液：致命守护者》预告全球首曝，正邪共生黑暗来袭"
-                                                    class="link-txt" href="//www.iqiyi.com/v_19rrd08ezc.html"
-                                                    target="_blank"><!---->
-                                                《毒液：致命守护者》预告全球首曝，正邪共生黑暗来袭
-                                            </a></p> <!----> <!----> <!----></div>
-                                        </div>
-                                    </li>
-                                </ul> <!----></div>
-                        </div>
-                    </div>
-                </div>
+
                 <div id="1000000000720" class="qy-mod-ad" style="display: none;"></div>
                 <div id="block-O" class="qy-mod-wrap-side mod-vertical-two" data-asyn-pb="true">
                     <div class="mod-left">
@@ -4785,293 +4057,49 @@
                             </div>
                             <div class="qy-mod-list mb" id="picList1">
                                 <ul id="" class="qy-mod-ul">
+                                    {volist name='data.serias_new.lists' id='snew' offset='0' length='5'}
                                     <li class="qy-mod-li">
                                         <div class="qy-mod-img vertical">
-                                            <div class="qy-mod-link-wrap"><a title="冒险王卫斯理之蓝血人" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rrcvc8tc.html"
-                                                                             target="_blank"><img alt="冒险王卫斯理之蓝血人"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_260_360.png"
+                                            <div class="qy-mod-link-wrap"><a title="{$snew.title}" class="qy-mod-link"
+                                                                             href="/index/index/video?vid={$snew.id}"
+                                                                             target="_blank"><img alt="{$snew.title}"
+                                                                                                  src="{$snew.img}"
                                                                                                   rseat="712211_dianshiju_image1"
                                                                                                   class="qy-mod-cover">
-                                                <div class="icon-tr"><img alt="冒险王卫斯理之蓝血人"
-                                                                          src="//pic0.qiyipic.com/common/20171106/ac/1b/vip_100000_v_601_0_27.png">
-                                                </div>
+
                                                 <div class="icon-br"><span class="qy-mod-label">12集全</span></div>
                                             </a></div>
                                             <div class="title-wrap"><p class="main"><!----> <a
-                                                    rseat="712211_dianshiju_title1" title="冒险王卫斯理之蓝血人" class="link-txt"
+                                                    rseat="712211_dianshiju_title1" title="{$snew.title}" class="link-txt"
                                                     href="//www.iqiyi.com/v_19rrcvc8tc.html" target="_blank"><!---->
-                                                冒险王卫斯理之蓝血人
+                                                {$snew.title}
                                             </a></p> <!----> <!----> <!----></div>
                                         </div>
                                     </li>
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img vertical">
-                                            <div class="qy-mod-link-wrap"><a title="真爱的谎言之破冰者" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rrcw8o30.html"
-                                                                             target="_blank"><img alt="真爱的谎言之破冰者"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_260_360.png"
-                                                                                                  rseat="712211_dianshiju_image2"
-                                                                                                  class="qy-mod-cover">
-                                                <div class="icon-tr"><img alt="真爱的谎言之破冰者"
-                                                                          src="//pic0.qiyipic.com/common/20171106/ac/1b/vip_100000_v_601_0_27.png">
-                                                </div>
-                                                <div class="icon-br"><span class="qy-mod-label">更新至19集</span></div>
-                                            </a></div>
-                                            <div class="title-wrap"><p class="main"><!----> <a
-                                                    rseat="712211_dianshiju_title2" title="真爱的谎言之破冰者" class="link-txt"
-                                                    href="//www.iqiyi.com/v_19rrcw8o30.html" target="_blank"><!---->
-                                                真爱的谎言之破冰者
-                                            </a></p> <!----> <!----> <!----></div>
-                                        </div>
-                                    </li>
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img vertical">
-                                            <div class="qy-mod-link-wrap"><a title="远大前程" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rrcfkp0w.html"
-                                                                             target="_blank"><img alt="远大前程"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_260_360.png"
-                                                                                                  rseat="712211_dianshiju_image3"
-                                                                                                  class="qy-mod-cover">
-                                                <div class="icon-tr"><img alt="远大前程"
-                                                                          src="//pic0.qiyipic.com/common/20171106/ac/1b/vip_100000_v_601_0_27.png">
-                                                </div>
-                                                <div class="icon-br"><span class="qy-mod-label">48集全</span></div>
-                                            </a></div>
-                                            <div class="title-wrap"><p class="main"><!----> <a
-                                                    rseat="712211_dianshiju_title3" title="远大前程" class="link-txt"
-                                                    href="//www.iqiyi.com/v_19rrcfkp0w.html" target="_blank"><!---->
-                                                远大前程
-                                            </a></p> <!----> <!----> <!----></div>
-                                        </div>
-                                    </li>
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img vertical">
-                                            <div class="qy-mod-link-wrap"><a title="国民安保官之绝命护卫" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rrctdqh0.html"
-                                                                             target="_blank"><img alt="国民安保官之绝命护卫"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_260_360.png"
-                                                                                                  rseat="712211_dianshiju_image4"
-                                                                                                  class="qy-mod-cover">
-                                                <div class="icon-tr"><img alt="国民安保官之绝命护卫"
-                                                                          src="//pic0.qiyipic.com/common/20171106/ac/1b/vip_100000_v_601_0_27.png">
-                                                </div>
-                                                <div class="icon-br"><span class="qy-mod-label">12集全</span></div>
-                                            </a></div>
-                                            <div class="title-wrap"><p class="main"><!----> <a
-                                                    rseat="712211_dianshiju_title4" title="国民安保官之绝命护卫" class="link-txt"
-                                                    href="//www.iqiyi.com/v_19rrctdqh0.html" target="_blank"><!---->
-                                                国民安保官之绝命护卫
-                                            </a></p> <!----> <!----> <!----></div>
-                                        </div>
-                                    </li>
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img vertical">
-                                            <div class="qy-mod-link-wrap"><a title="金牌投资人" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rrcethog.html"
-                                                                             target="_blank"><img alt="金牌投资人"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_260_360.png"
-                                                                                                  rseat="712211_dianshiju_image5"
-                                                                                                  class="qy-mod-cover">
-                                                <div class="icon-tr"><img alt="金牌投资人"
-                                                                          src="//pic0.qiyipic.com/common/20171106/ac/1b/vip_100000_v_601_0_27.png">
-                                                </div>
-                                                <div class="icon-br"><span class="qy-mod-label">更新至22集</span></div>
-                                            </a></div>
-                                            <div class="title-wrap"><p class="main"><!----> <a
-                                                    rseat="712211_dianshiju_title5" title="金牌投资人" class="link-txt"
-                                                    href="//www.iqiyi.com/v_19rrcethog.html" target="_blank"><!---->
-                                                金牌投资人
-                                            </a></p> <!----> <!----> <!----></div>
-                                        </div>
-                                    </li>
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img vertical">
-                                            <div class="qy-mod-link-wrap"><a title="以你为名的青春" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rrbl4wbw.html"
-                                                                             target="_blank"><img alt="以你为名的青春"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_260_360.png"
-                                                                                                  rseat="712211_dianshiju_image6"
-                                                                                                  class="qy-mod-cover">
-                                                <div class="icon-tr"><i class="qy-video-icon qy-video-self"></i></div>
-                                                <div class="icon-br"><span class="qy-mod-label">24集全</span></div>
-                                            </a></div>
-                                            <div class="title-wrap"><p class="main"><!----> <a
-                                                    rseat="712211_dianshiju_title6" title="以你为名的青春" class="link-txt"
-                                                    href="//www.iqiyi.com/v_19rrbl4wbw.html" target="_blank"><!---->
-                                                以你为名的青春
-                                            </a></p> <!----> <!----> <!----></div>
-                                        </div>
-                                    </li>
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img vertical">
-                                            <div class="qy-mod-link-wrap"><a title="超能造梦第一季" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rrc59n2k.html"
-                                                                             target="_blank"><img alt="超能造梦第一季"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_260_360.png"
-                                                                                                  rseat="712211_dianshiju_image7"
-                                                                                                  class="qy-mod-cover">
-                                                <div class="icon-tr"><img alt="超能造梦第一季"
-                                                                          src="//pic0.qiyipic.com/common/20171106/ac/1b/vip_100000_v_601_0_27.png">
-                                                </div>
-                                                <div class="icon-br"><span class="qy-mod-label">12集全</span></div>
-                                            </a></div>
-                                            <div class="title-wrap"><p class="main"><!----> <a
-                                                    rseat="712211_dianshiju_title7" title="超能造梦第一季" class="link-txt"
-                                                    href="//www.iqiyi.com/v_19rrc59n2k.html" target="_blank"><!---->
-                                                超能造梦第一季
-                                            </a></p> <!----> <!----> <!----></div>
-                                        </div>
-                                    </li>
+                                    {/volist}
                                 </ul> <!----></div>
                             <div class="qy-mod-list" id="picList2">
                                 <ul id="" class="qy-mod-ul">
+                                    {volist name='data.serias_new.lists' id='snew2' offset='5' length='5'}
                                     <li class="qy-mod-li">
                                         <div class="qy-mod-img vertical">
-                                            <div class="qy-mod-link-wrap"><a title="好久不见" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rrbj6nhw.html"
-                                                                             target="_blank"><img alt="好久不见"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_260_360.png"
+                                            <div class="qy-mod-link-wrap"><a title="{$snew2.title}" class="qy-mod-link"
+                                                                             href="/index/index/video?vid={$snew2.id}"
+                                                                             target="_blank"><img alt="{$snew2.title}"
+                                                                                                  src="{$snew2.img}"
                                                                                                   rseat="712211_dianshiju_image8"
                                                                                                   class="qy-mod-cover">
                                                 <div class="icon-tr"><i class="qy-video-icon qy-video-1080"></i></div>
                                                 <div class="icon-br"><span class="qy-mod-label">42集全</span></div>
                                             </a></div>
                                             <div class="title-wrap"><p class="main"><!----> <a
-                                                    rseat="712211_dianshiju_title8" title="好久不见" class="link-txt"
+                                                    rseat="712211_dianshiju_title8" title="{$snew2.title}" class="link-txt"
                                                     href="//www.iqiyi.com/v_19rrbj6nhw.html" target="_blank"><!---->
-                                                好久不见
+                                                {$snew2.title}
                                             </a></p> <!----> <!----> <!----></div>
                                         </div>
                                     </li>
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img vertical">
-                                            <div class="qy-mod-link-wrap"><a title="魔都风云" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rrbyl6no.html"
-                                                                             target="_blank"><img alt="魔都风云"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_260_360.png"
-                                                                                                  rseat="712211_dianshiju_image9"
-                                                                                                  class="qy-mod-cover">
-                                                <div class="icon-tr"><i class="qy-video-icon qy-video-1080"></i></div>
-                                                <div class="icon-br"><span class="qy-mod-label">更新至38集</span></div>
-                                            </a></div>
-                                            <div class="title-wrap"><p class="main"><!----> <a
-                                                    rseat="712211_dianshiju_title9" title="魔都风云" class="link-txt"
-                                                    href="//www.iqiyi.com/v_19rrbyl6no.html" target="_blank"><!---->
-                                                魔都风云
-                                            </a></p> <!----> <!----> <!----></div>
-                                        </div>
-                                    </li>
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img vertical">
-                                            <div class="qy-mod-link-wrap"><a title="海上嫁女记" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rrccve2s.html"
-                                                                             target="_blank"><img alt="海上嫁女记"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_260_360.png"
-                                                                                                  rseat="712211_dianshiju_image10"
-                                                                                                  class="qy-mod-cover">
-                                                <div class="icon-tr"><i class="qy-video-icon qy-video-1080"></i></div>
-                                                <div class="icon-br"><span class="qy-mod-label">更新至45集</span></div>
-                                            </a></div>
-                                            <div class="title-wrap"><p class="main"><!----> <a
-                                                    rseat="712211_dianshiju_title10" title="海上嫁女记" class="link-txt"
-                                                    href="//www.iqiyi.com/v_19rrccve2s.html" target="_blank"><!---->
-                                                海上嫁女记
-                                            </a></p> <!----> <!----> <!----></div>
-                                        </div>
-                                    </li>
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img vertical">
-                                            <div class="qy-mod-link-wrap"><a title="凤囚凰" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rrevkcf0.html"
-                                                                             target="_blank"><img alt="凤囚凰"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_260_360.png"
-                                                                                                  rseat="712211_dianshiju_image11"
-                                                                                                  class="qy-mod-cover">
-                                                <div class="icon-tr"><i class="qy-video-icon qy-video-1080"></i></div>
-                                                <div class="icon-br"><span class="qy-mod-label">54集全</span></div>
-                                            </a></div>
-                                            <div class="title-wrap"><p class="main"><!----> <a
-                                                    rseat="712211_dianshiju_title11" title="凤囚凰" class="link-txt"
-                                                    href="//www.iqiyi.com/v_19rrevkcf0.html" target="_blank"><!---->
-                                                凤囚凰
-                                            </a></p> <!----> <!----> <!----></div>
-                                        </div>
-                                    </li>
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img vertical">
-                                            <div class="qy-mod-link-wrap"><a title="南方有乔木" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rrcb5pmk.html"
-                                                                             target="_blank"><img alt="南方有乔木"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_260_360.png"
-                                                                                                  rseat="712211_dianshiju_image12"
-                                                                                                  class="qy-mod-cover">
-                                                <div class="icon-tr"><i class="qy-video-icon qy-video-1080"></i></div>
-                                                <div class="icon-br"><span class="qy-mod-label">40集全</span></div>
-                                            </a></div>
-                                            <div class="title-wrap"><p class="main"><!----> <a
-                                                    rseat="712211_dianshiju_title12" title="南方有乔木" class="link-txt"
-                                                    href="//www.iqiyi.com/v_19rrcb5pmk.html" target="_blank"><!---->
-                                                南方有乔木
-                                            </a></p> <!----> <!----> <!----></div>
-                                        </div>
-                                    </li>
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img vertical">
-                                            <div class="qy-mod-link-wrap"><a title="娘亲舅大" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rrct9o20.html"
-                                                                             target="_blank"><img alt="娘亲舅大"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_260_360.png"
-                                                                                                  rseat="712211_dianshiju_image13"
-                                                                                                  class="qy-mod-cover">
-                                                <div class="icon-tr"><i class="qy-video-icon qy-video-1080"></i></div>
-                                                <div class="icon-br"><span class="qy-mod-label">更新至25集</span></div>
-                                            </a></div>
-                                            <div class="title-wrap"><p class="main"><!----> <a
-                                                    rseat="712211_dianshiju_title13" title="娘亲舅大" class="link-txt"
-                                                    href="//www.iqiyi.com/v_19rrct9o20.html" target="_blank"><!---->
-                                                娘亲舅大
-                                            </a></p> <!----> <!----> <!----></div>
-                                        </div>
-                                    </li>
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img vertical">
-                                            <div class="qy-mod-link-wrap"><a title="基本演绎法 第5季" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/v_19rrc5siuc.html"
-                                                                             target="_blank"><img alt="基本演绎法 第5季"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_260_360.png"
-                                                                                                  rseat="712211_dianshiju_image14"
-                                                                                                  class="qy-mod-cover">
-                                                <div class="icon-tr"><img alt="基本演绎法 第5季"
-                                                                          src="//pic0.qiyipic.com/common/20171106/ac/1b/vip_100000_v_601_0_27.png">
-                                                </div>
-                                                <div class="icon-br"><span class="qy-mod-label">22集全</span></div>
-                                            </a></div>
-                                            <div class="title-wrap"><p class="main"><!----> <a
-                                                    rseat="712211_dianshiju_title14" title="基本演绎法 第5季" class="link-txt"
-                                                    href="//www.iqiyi.com/v_19rrc5siuc.html" target="_blank"><!---->
-                                                基本演绎法 第5季
-                                            </a></p> <!----> <!----> <!----></div>
-                                        </div>
-                                    </li>
-                                    <li class="qy-mod-li">
-                                        <div class="qy-mod-img vertical">
-                                            <div class="qy-mod-link-wrap"><a title="神剧亮了：三大亨特辑" class="qy-mod-link"
-                                                                             href="//www.iqiyi.com/dianshiju/sjll_wjt.html"
-                                                                             target="_blank"><img alt="神剧亮了：三大亨特辑"
-                                                                                                  src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_260_360.png"
-                                                                                                  rseat="712211_dianshiju_image15"
-                                                                                                  class="qy-mod-cover">
-                                                <div class="icon-tr"><i class="qy-video-icon"></i></div> <!----></a>
-                                            </div>
-                                            <div class="title-wrap"><p class="main"><!----> <a
-                                                    rseat="712211_dianshiju_title15" title="神剧亮了：三大亨特辑" class="link-txt"
-                                                    href="//www.iqiyi.com/dianshiju/sjll_wjt.html" target="_blank">
-                                                <!---->
-                                                神剧亮了：三大亨特辑
-                                            </a></p> <!----> <!----> <!----></div>
-                                        </div>
-                                    </li>
+                                    {/volist}
                                 </ul> <!----></div>
                         </div>
                     </div>
@@ -5086,69 +4114,28 @@
                         </div>
                         <div class="qy-mod-rank rank-s">
                             <ul id="txtList" class="rank-list">
-                                <li class="rank-li"><i class="num no1">1</i> <a href="//www.iqiyi.com/a_19rrhebm2l.html"
+                                {volist name="data.serias_hot.lists" id='shot'}
+                                <li class="rank-li"><i class="num no{$i}">{$i}</i> <a href="/index/index/video?vid={$shot.id}"
                                                                                 target="_blank"
-                                                                                rseat="712211_dianshijubang_title1"
-                                                                                title="真爱的谎言之破冰者" class="txt-link">真爱的谎言之破冰者</a>
+                                                                                rseat="712211_dianshijubang_title{$i}"
+                                                                                title="{$shot.title}" class="txt-link">{$shot.title}</a>
                                     <!----> <i class="qy-common-icon qy-common-rankUnchg"></i> <!----></li>
-                                <li class="rank-li"><i class="num no2">2</i> <a href="//www.iqiyi.com/a_19rrh9xpsx.html"
-                                                                                target="_blank"
-                                                                                rseat="712211_dianshijubang_title2"
-                                                                                title="远大前程" class="txt-link">远大前程</a>
-                                    <!----> <i class="qy-common-icon qy-common-rankUnchg"></i> <!----></li>
-                                <li class="rank-li"><i class="num no3">3</i> <a href="//www.iqiyi.com/a_19rrgzs899.html"
-                                                                                target="_blank"
-                                                                                rseat="712211_dianshijubang_title3"
-                                                                                title="魔都风云" class="txt-link">魔都风云</a>
-                                    <i class="qy-common-icon qy-common-rankUp"></i> <!----> <!----></li>
-                                <li class="rank-li"><i class="num">4</i> <a href="//www.iqiyi.com/a_19rrhcui31.html"
-                                                                            target="_blank"
-                                                                            rseat="712211_dianshijubang_title4"
-                                                                            title="好久不见" class="txt-link">好久不见</a>
-                                    <!----> <!----> <i class="qy-common-icon qy-common-rankDown"></i></li>
-                                <li class="rank-li"><i class="num">5</i> <a href="//www.iqiyi.com/a_19rrh1ipgl.html"
-                                                                            target="_blank"
-                                                                            rseat="712211_dianshijubang_title5"
-                                                                            title="娘亲舅大" class="txt-link">娘亲舅大</a> <i
-                                        class="qy-common-icon qy-common-rankUp"></i> <!----> <!----></li>
-                                <li class="rank-li"><i class="num">6</i> <a href="//www.iqiyi.com/a_19rrh9eo2x.html"
-                                                                            target="_blank"
-                                                                            rseat="712211_dianshijubang_title6"
-                                                                            title="凤囚凰" class="txt-link">凤囚凰</a> <i
-                                        class="qy-common-icon qy-common-rankUp"></i> <!----> <!----></li>
-                                <li class="rank-li"><i class="num">7</i> <a href="//www.iqiyi.com/a_19rrh7t9vx.html"
-                                                                            target="_blank"
-                                                                            rseat="712211_dianshijubang_title7"
-                                                                            title="老男孩" class="txt-link">老男孩</a> <!---->
-                                    <!----> <i class="qy-common-icon qy-common-rankDown"></i></li>
-                                <li class="rank-li"><i class="num">8</i> <a href="//www.iqiyi.com/a_19rrgytd51.html"
-                                                                            target="_blank"
-                                                                            rseat="712211_dianshijubang_title8"
-                                                                            title="阳光下的法庭" class="txt-link">阳光下的法庭</a>
-                                    <i class="qy-common-icon qy-common-rankUp"></i> <!----> <!----></li>
-                                <li class="rank-li"><i class="num">9</i> <a href="//www.iqiyi.com/a_19rrk2hct9.html"
-                                                                            target="_blank"
-                                                                            rseat="712211_dianshijubang_title9"
-                                                                            title="武林外传" class="txt-link">武林外传</a> <i
-                                        class="qy-common-icon qy-common-rankUp"></i> <!----> <!----></li>
-                                <li class="rank-li"><i class="num">10</i> <a href="//www.iqiyi.com/a_19rrgxujgt.html"
-                                                                             target="_blank"
-                                                                             rseat="712211_dianshijubang_title10"
-                                                                             title="冒险王卫斯理之蓝血人" class="txt-link">冒险王卫斯理之蓝血人</a>
-                                    <!----> <!----> <i class="qy-common-icon qy-common-rankDown"></i></li>
+                                {/volist}
                             </ul>
                         </div>
                         <div class="qy-mod-img vertical" id="picList">
-                            <div class="qy-mod-link-wrap"><a href="//www.iqiyi.com/dianshiju/sjll_wjt.html"
-                                                             title="神剧亮了：三大亨特辑" target="_blank" class="qy-mod-link"><img
-                                    alt="神剧亮了：三大亨特辑" src="//www.qiyipic.com/common/fix/site-v4/qy-mod-img_260_360.png"
+                            {volist name='data.serias_new.lists' id='snew3' offset='10' length='1'}
+                            <div class="qy-mod-link-wrap"><a href="/index/index/video?vid={$snew3.id}"
+                                                             title="{$snew3.title}" target="_blank" class="qy-mod-link"><img
+                                    alt="{$snew3.title}" src="{$snew3.img}"
                                     rseat="712211_dianshiju_image16" class="qy-mod-cover">
                                 <div class="icon-tr"><i class="qy-video-icon"></i></div> <!----> <!----></a></div>
                             <div class="title-wrap"><p class="main"><!----> <a rseat="712211_dianshiju_title16"
                                                                                target="_blank"
-                                                                               href="//www.iqiyi.com/dianshiju/sjll_wjt.html"
-                                                                               title="神剧亮了：三大亨特辑" class="link-txt">神剧亮了：三大亨特辑</a>
+                                                                               href="/index/index/video?vid={$snew3.id}"
+                                                                               title="{$snew3.title}" class="link-txt">{$snew3.title}</a>
                             </p> <!----></div>
+                            {/volist}
                         </div>
                     </div>
                 </div>
@@ -5940,16 +4927,15 @@
             j++;
         }, 4000);
     })();
-</script>
 
+</script>
 <script type="text/javascript">
+    //首屏幻灯片
     $('.focus-side-itemLink').on('mouseover', function(){
         $(this).parent().addClass('selected').siblings().removeClass('selected');
         var i = $(this).attr('rseat');
         $('.focus-index-list li[rseat=fcs_0_p'+i+']').show().siblings('li').hide();
     });
-</script>
-<script type="text/javascript">
     //今日热点幻灯片左
     $('i.qy-common-pageleft8').on('click', function(){
         var i = $(this).siblings('span').text().substring(0,1) - 1;

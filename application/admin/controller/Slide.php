@@ -15,7 +15,7 @@ class Slide extends BaseAdmin
     public function top()
     {
         $data['type'] = 0;
-        $data['slides'] = $this->db->table('slides')->where(array('type'=> $data['type']))->order('sort')->cates('id');
+        $data['slides'] = $this->db->table('slides')->where(array('type'=> $data['type']))->order('sort, id desc')->cates('id');
         $this->assign('data',$data);
         return $this->fetch('index');
     }
@@ -23,7 +23,7 @@ class Slide extends BaseAdmin
     public function hot()
     {
         $data['type'] = 1;
-        $data['slides'] = $this->db->table('slides')->where(array('type'=> $data['type']))->order('sort')->cates('id');
+        $data['slides'] = $this->db->table('slides')->where(array('type'=> $data['type']))->order('sort, id desc')->cates('id');
         $this->assign('data',$data);
         return $this->fetch('index');
     }
@@ -31,14 +31,14 @@ class Slide extends BaseAdmin
     public function zongyi()
     {
         $data['type'] = 2;
-        $data['slides'] = $this->db->table('slides')->where(array('type'=> $data['type']))->order('sort')->cates('id');
+        $data['slides'] = $this->db->table('slides')->where(array('type'=> $data['type']))->order('sort, id desc')->cates('id');
         $this->assign('data',$data);
         return $this->fetch('index');
     }
     public function yule()
     {
         $data['type'] = 3;
-        $data['slides'] = $this->db->table('slides')->where(array('type'=> $data['type']))->order('sort')->cates('id');
+        $data['slides'] = $this->db->table('slides')->where(array('type'=> $data['type']))->order('sort, id desc')->cates('id');
         $this->assign('data',$data);
         return $this->fetch('index');
     }

@@ -15,11 +15,13 @@ fake iqy
 开发环境及工具
 	phpstudy/sublime/navicat/thinkphp5
 # 项目使用说明
-1.修改posts文件，指定域名
+1.修改hosts文件，指定访问域名
 2.添加apache虚拟主机，根目录定位至public路径
 3.创建数据库并执行sql语句
-4.修改 /application/database.php 指定mysql账户和数据库名
-5.默认首页为前台（时间关系暂时还不完善）
-	影片列表页相对完善
-6.后台登录路口：具体域名/admin/account/login
+4.配置数据库连接 /application/database.php 指定mysql账户和数据库名
+5.默认首页为前台（时间关系暂时还不完善）已渲染部分数据
+	前台展示页面相对爱奇艺进行了简化，只有1.首页,2.影片列表页，3.影片播放页
+	影片列表页相对完善，待进一步丰富功能优化页面。
+6.后台管理登录路口：具体域名/admin/account/login
 	系统管理员：admin => 123456
+	可根据需求对菜单进行增加和删除。增加后需要手动添加相应的控制器和方法

@@ -3,37 +3,48 @@ namespace app\index\controller;
 
 class Index extends BaseIndex
 {
+    //网站首页显示
     public function index()
     {
-        //首页幻灯片
-        $slides = $this->db->table('slides')->order('sort')->cates('id');
+        $slides = $this->db->table('slides')->order('sort,id desc')->cates('id');
         foreach ($slides as $key => $slide)
         {
             switch ($slide['type'])
             {
                 case 0:
-                    //首屏
+                    //幻灯片:首屏
                     $data['tops'][$key] = $slide;
                     break;
                 case 1:
-                    //今日热点
+                    //幻灯片:今日焦点
                     $data['hots'][$key] = $slide;
                     break;
                 case 2:
-                    //综艺
+                    //幻灯片:综艺
                     $data['zongyis'][$key] = $slide;
                     break;
                 case 3:
-                    //综艺
+                    //幻灯片:娱乐
                     $data['yules'][$key] = $slide;
                     break;
             }
         }
-        //导航
+        //标签导航
         $data['labels'] = $this->db->table('labels')->where(array('flag'=>'channel'))->order('sort')->lists();
-        //娱乐
-        $res = $this->db->table('videos')->where(array('channel_id'=>4,'status'=>1))->pages(10);
-        $data['today_hots'] = $res['lists'];
+
+        //今日焦点
+        $data['today_hots'] = $this->db->table('videos')->where(array('channel_id'=>4,'status'=>1))->pages(10);
+
+        //电影:最新
+        $data['movies_new'] = $this->db->table('videos')->where(array('channel_id'=>2, 'status'=>1))->order('create_at desc')->pages(11);
+        //电影:最火
+        $data['movies_hot'] = $this->db->table('videos')->where(array('channel_id'=>2,'status'=>1))->order('pv desc')->pages(10);
+
+        //电视剧:最新
+        $data['serias_new'] = $this->db->table('videos')->where(array('channel_id'=>1,'status'=>1))->order('create_at desc')->pages(11);
+        //电视剧:最火
+        $data['serias_hot'] = $this->db->table('videos')->where(array('channel_id'=>1,'status'=>1))->order('pv desc')->pages(10);
+
         $this->assign('data',$data);
         return $this->fetch();
     }
@@ -78,7 +89,7 @@ class Index extends BaseIndex
             $videos['size_id'] > 0 && $where = array_merge($where, array('size_id'=>$videos['size_id']));
             $where = array_merge($where, array('status'=>1));
         //分页
-        $data['pageSize'] = 6;
+        $data['pageSize'] = 12;
         $data['videos'] = $this->db->table('videos')->where($where)->order('id desc')->pages($data['pageSize']);
         $data['page'] = (int)max(1, input('get.page'));
         //传入页面数据
@@ -98,6 +109,8 @@ class Index extends BaseIndex
             return $this->redirect('/index/index/cate');
         }
         $this->assign('data',$data);
+        //更新影片的PV字段
+        $this->db->table('videos')->where(array('id'=>$video_id))->update(array('pv'=>($data['video']['pv']+1)));
         return $this->fetch();
     }
 }
