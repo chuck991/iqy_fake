@@ -28,9 +28,16 @@ class Slide extends BaseAdmin
         return $this->fetch('index');
     }
     //综艺
-    public function yule()
+    public function zongyi()
     {
         $data['type'] = 2;
+        $data['slides'] = $this->db->table('slides')->where(array('type'=> $data['type']))->order('sort')->cates('id');
+        $this->assign('data',$data);
+        return $this->fetch('index');
+    }
+    public function yule()
+    {
+        $data['type'] = 3;
         $data['slides'] = $this->db->table('slides')->where(array('type'=> $data['type']))->order('sort')->cates('id');
         $this->assign('data',$data);
         return $this->fetch('index');
@@ -50,9 +57,11 @@ class Slide extends BaseAdmin
         $id = (int)input('post.id');
         $data['type'] = (int)input('post.type');
         $data['title'] = trim(input('post.title'));
+        $data['desc'] = trim(input('post.desc'));
         $data['url'] = trim(input('post.url'));
         $data['img'] = trim(input('post.img'));
         $data['sort'] = trim(input('post.sort'));
+
 
         if ($data['title'] == '' ||  $data['url'] == '' || $data['img']=='')
         {

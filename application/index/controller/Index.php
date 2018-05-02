@@ -21,6 +21,10 @@ class Index extends BaseIndex
                     break;
                 case 2:
                     //综艺
+                    $data['zongyis'][$key] = $slide;
+                    break;
+                case 3:
+                    //综艺
                     $data['yules'][$key] = $slide;
                     break;
             }

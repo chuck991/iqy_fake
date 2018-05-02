@@ -19,7 +19,7 @@ class Video extends BaseAdmin
         $where = array();
         $data['wd'] && $where = 'title like "%' . $data['wd'] . '%"';
         //获取分页数据
-        $videos = $this->db->table('videos')->where($where)->pages($data['pageSize']);
+        $videos = $this->db->table('videos')->where($where)->order('id desc')->pages($data['pageSize']);
         //辅助数据
         $label_ids = [];
         foreach ($videos['lists'] as $video)

@@ -785,8 +785,6 @@
                             <!-- flash播放器 start -->
                         <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
                             <div data-widget-videoarea="videoarea" class="videoArea" id="block-B" data-block-name="播放器">
-
-                                <!--<div id="video" style="width:600px;height:400px;"></div>-->
                             </div>
                             <!-- flash播放器 end -->
                             <!-- player left start -->
@@ -836,7 +834,7 @@
                                                 },100);
 
                                                 var flashvars={
-                                                    f:'/static/test.mp4',
+                                                    f:"{$data.video.url}",
                                                     c:0,
                                                     p:1,
                                                 };
